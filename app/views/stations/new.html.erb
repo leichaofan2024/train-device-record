@@ -1,5 +1,5 @@
 <%= simple_form_for @station do |f| %>
   <%= f.input :name %>
-  <%= f.association :equipment_categories %>
+  <%= f.association :equipment_categories,as: :check_boxes %>
   <%= f.submit "创建", data: {disable_with: "提交中..."} %>
 <% end %>
