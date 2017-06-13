@@ -7,11 +7,15 @@ Rails.application.routes.draw do
     collection do
       post :category_new
     end
+    member do
+      post :transformer_new
+    end
   end
 
 
   resources :factories
   resources :equipment_categories
+  resources :transformers
 
 
 end

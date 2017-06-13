@@ -10,6 +10,7 @@ class StationsController < ApplicationController
   def show
     @station = Station.find(params[:id])
     @equipment_categories = @station.equipment_categories
+
   end
 
   def edit
@@ -43,6 +44,11 @@ class StationsController < ApplicationController
   def category_new
     @equipment_category = EquipmentCategory.new
   end
+  def transformer_new
+    @station = Station.find(params[:id])
+    @transformer = Transformer.new
+  end
+
 
   private
 
