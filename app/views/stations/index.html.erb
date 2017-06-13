@@ -1,0 +1,23 @@
+
+
+<div class="container-fluid">
+  <%= link_to("新建", new_station_path, class: "btn btn-deafault pull-right")%>
+  <table class="table talbe-bordered">
+    <thead>
+      <tr>
+        <th>部门</th>
+        <th>修改</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @stations.each do |station| %>
+      <tr>
+        <td><%= link_to(station.name, station_path(station))%></td>
+        <td><%= link_to("修改", edit_station_path(station))%> |
+            <%= link_to("删除", station_path(station), method: :delete, data: { confirm: "你确定么？"})%>
+        </td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
