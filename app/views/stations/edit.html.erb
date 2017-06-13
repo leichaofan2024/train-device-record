@@ -1,4 +1,5 @@
 <%= simple_form_for @station do |f| %>
   <%= f.input :name %>
+  <%= f.association :equipment_categories %>
   <%= f.submit "创建", data: {disable_with: "提交中..."} %>
 <% end %>

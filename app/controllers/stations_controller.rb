@@ -9,6 +9,7 @@ class StationsController < ApplicationController
 
   def show
     @station = Station.find(params[:id])
+    @equipment_categories = @station.equipment_categories
   end
 
   def edit
@@ -39,9 +40,13 @@ class StationsController < ApplicationController
     redirect_to stations_path
   end
 
+  def category_new
+    @equipment_category = EquipmentCategory.new
+  end
+
   private
 
   def station_params
-    params.require(:station).permit(:name)
+    params.require(:station).permit(:name,:equipment_category_ids => [])
   end
 end
