@@ -38,6 +38,7 @@ ActiveRecord::Schema.define(version: 20170613021111) do
   end
 
   create_table "transformers", force: :cascade do |t|
+    t.integer  "station_id"
     t.integer  "equipment_category_id"
     t.integer  "factory_id"
     t.string   "standard"

@@ -1,4 +1,7 @@
 class EquipmentCategoriesController < ApplicationController
+  def index
+    @equipment_categories = EquipmentCategory.all
+  end 
   def create
     @equipment_category= EquipmentCategory.new(equipment_category_params)
     @equipment_category.save

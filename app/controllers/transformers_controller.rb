@@ -1,15 +1,26 @@
 class TransformersController < ApplicationController
-  def create
+  def index
+    @transformers = Transformer.all
+  end
 
+  def new
+    @equipment_category = EquipmentCategory.find(params[:equipment_category_id])
+    @station = Station.where(id: params[:station_id])
+     @transformer = Transformer.new
+  end
+
+  def create
     @transformer = Transformer.new(transformer_params)
+    @equipment_category = EquipmentCategory.find(params[:equipment_category_id])
+    @transformer.equipment_category_id = @equipment_category.id
     if @transformer.save
       redirect_to stations_path
-    
     end
   end
 
   def transformer_params
     params.require(:transformer).permit(
+           :station_id            ,
            :equipment_category_id ,   #
            :factory_id            ,   #
            :standard              ,    #规格型号
@@ -33,7 +44,7 @@ class TransformersController < ApplicationController
            :manufacture_date      ,    #出厂日期
            :manufacture_number    ,    #出厂序号
            :installation_date     ,    #安装日期
-           :commissioning_date     ,   #投运日期
+           :commissioning_date    ,   #投运日期
            :remark                , )
   end
 
