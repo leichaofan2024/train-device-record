@@ -1,0 +1,5 @@
+<%= simple_form_for @equipment_category do |f| %>
+  <%= f.input :name %>
+  <%= f.input :description %>
+  <%= f.submit "修改完成", data: {disable_with:"提交中... "}%>
+<% end %>

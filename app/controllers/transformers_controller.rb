@@ -1,12 +1,18 @@
 class TransformersController < ApplicationController
   def index
-    @transformers = Transformer.all
+    @station = Station.find(params[:station_id])
+    @transformers = Transformer.all.where(station_id: params[:station_id],equipment_category_id: params[:equipment_category_id])
+  end
+
+  def show
+    @equipment_category = EquipmentCategory.find(params[:equipment_category_id])
+    @transformer = Transformer.find(params[:id])
   end
 
   def new
     @equipment_category = EquipmentCategory.find(params[:equipment_category_id])
     @station = Station.where(id: params[:station_id])
-     @transformer = Transformer.new
+    @transformer = Transformer.new
   end
 
   def create
