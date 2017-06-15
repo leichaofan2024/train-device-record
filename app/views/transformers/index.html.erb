@@ -17,7 +17,7 @@
         <td><%= t.running_number %></td>
         <td><%= link_to("编辑", "#")%></td>
         <td><%= link_to("删除", "#")%></td>
-        <td><%= link_to("查看", equipment_category_transformer_equipment_resumes_path(t.equipment_category,t))%></td>
+        <td><%= link_to("查看", equipment_category_transformer_path(t.equipment_category,t))%></td>
       </tr>
     <% end %>
   </tbody>

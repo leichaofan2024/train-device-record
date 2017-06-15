@@ -7,6 +7,7 @@ class TransformersController < ApplicationController
   def show
     @equipment_category = EquipmentCategory.find(params[:equipment_category_id])
     @transformer = Transformer.find(params[:id])
+    @equipment_resumes = @transformer.equipment_resumes
   end
 
   def new
