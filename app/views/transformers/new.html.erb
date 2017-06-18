@@ -1,7 +1,7 @@
 <div class= "col-md-8 col-md-offset-2">
   <h3>添加变压器</h3>
   <%= simple_form_for [@equipment_category,@transformer] do |f| %>
-    <%= f.select :station_id, @station.map{|u| [u.name,u.id]} %>
+    <%= f.select :station_id, [[current_station.name,current_station.id]] %>
     <%= f.select :factory_id, Factory.all.map{|u| [u.name,u.id]} %>
     <%= f.input :standard ,label: "规格型号"%>
     <%= f.input :running_number,label: "运行编号"%>

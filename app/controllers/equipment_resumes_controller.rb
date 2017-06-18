@@ -11,7 +11,7 @@ class EquipmentResumesController < ApplicationController
     @transformer = Transformer.find(params[:transformer_id])
     @equipment_resume.transformer = @transformer
     @equipment_resume = EquipmentResume.new
-      @equipment_resume.save
+    if  @equipment_resume.save
       redirect_to transformers_path
     else
       render :new

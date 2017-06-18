@@ -1,0 +1,20 @@
+<div class="category-frame">
+  <% @equipment_categories.each do |e|%>
+
+      <div class="category-item">
+        <%= link_to(e.name, "#", class: "btn btn-default")%>
+        <%= link_to(content_tag(:i , "", class: "fa fa-pencil-square-o"), edit_equipment_category_path(e))%>
+      </div>
+
+
+  <% end %>
+  <div class="add-category">
+    <%= link_to("添加设备分类", edit_station_path(current_station),class: "btn btn-default")%>
+  </div>
+
+
+  <%= link_to("添加设备库", new_equipment_category_path, class: "btn btn-default")%>
+
+
+
+</div>
