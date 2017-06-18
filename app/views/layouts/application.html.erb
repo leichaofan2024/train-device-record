@@ -18,13 +18,14 @@
 
             <% current_station.equipment_categories.all.each do |e| %>
 
-               <a href="#{locate-<%= e.id %>}"><%= e.name %></a>
+               <a href="#equipmnet-detail-<%= e.id%>"><%= e.name %></a>
             <% end %>
           </div>
           <hr>
           <div class="side-bar-option">
             <a href="/equipment_categories">设备管理</a>
             <a href="/equipment_categories/admin_index">添加设备库</a>
+            <a href="/stations/<%= current_station.id%>"> 返回</a>
           </div>
         <% end %>
       </div>

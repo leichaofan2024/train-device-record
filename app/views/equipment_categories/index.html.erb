@@ -1,8 +1,10 @@
 <div class="category-frame">
   <% @equipment_categories.each_with_index do |e,index|%>
-    <% p = ["new_equipment_category_transformer"] %>
+      <% p= new_equipment_category_transformer_path(e) %>
       <div class="category-item">
-        <%= link_to(e.name, new_equipment_category_transformer_path(e), class: "btn btn-default btn-sm")%>
+        <%= link_to p,class: "btn btn-default" do %>
+          <%= e.name%>
+        <% end %>
       </div>
 
   <% end %>

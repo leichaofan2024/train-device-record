@@ -1,22 +1,8 @@
-<p><%= link_to("返回", stations_path)%></p>
-<h3><%= @station.name %></h3>
-
-<table class="table table-bordered">
-  <thead>
-    <tr>
-      <th>设备列表</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @equipment_categories.each do |equipment_category| %>
-    <tr>
-      <% if equipment_category.name == "变压器" %>
-        <td><%= link_to(equipment_category.name, equipment_category_transformers_path(equipment_category,station_id: @station.id)) %></td>
-        <td>
-          <%= link_to("添加", new_equipment_category_transformer_path(equipment_category_id: equipment_category.id, station_id: @station.id))%>
-        </td>
-      <% end %>
-    </tr>
-    <% end %>
-  </tbody>
-</table>
+<h3><%= @station.name %>设备汇总：</h3>
+<hr>
+<% @equipment_categories.each do |e| %>
+  <div class="equipment-detail">
+    <strong id= "equipmnet-detail-<%= e.id%>"> <%= e.name %>明细 </strong>
+    
+  </div>
+<% end %>
