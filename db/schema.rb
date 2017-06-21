@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170620092125) do
+ActiveRecord::Schema.define(version: 20170621022417) do
 
   create_table "equipment_categories", force: :cascade do |t|
     t.string   "name"
@@ -128,6 +128,7 @@ ActiveRecord::Schema.define(version: 20170620092125) do
     t.float    "highside_current"
     t.float    "highside_voltage"
     t.string   "ancillary_device"
+    t.string   "connection_diagram"
   end
 
   create_table "users", force: :cascade do |t|

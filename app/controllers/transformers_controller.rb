@@ -11,18 +11,42 @@ class TransformersController < ApplicationController
 
   def new
     @equipment_category = EquipmentCategory.find(params[:equipment_category_id])
-    @station = Station.where(id: params[:station_id])
     @transformer = Transformer.new
   end
 
   def create
     @transformer = Transformer.new(transformer_params)
     @equipment_category = EquipmentCategory.find(params[:equipment_category_id])
+
     @transformer.equipment_category_id = @equipment_category.id
     if @transformer.save
-      redirect_to stations_path
+      redirect_to station_path(current_station)
     end
   end
+
+  def edit
+    @equipment_category = EquipmentCategory.find(params[:equipment_category_id])
+    @transformer = Transformer.find(params[:id])
+  end
+
+  def update
+    @equipment_category = EquipmentCategory.find(params[:equipment_category_id])
+    @transformer = Transformer.find(params[:id])
+    @transformer.update(transformer_params)
+    redirect_to equipment_category_transformer_path(@equipment_category,@transformer)
+  end
+  # def create_transformer_resume_second
+  #   @transformer = Transformer.new(transformer_params)
+  #   @equipment_category = EquipmentCategory.find(params[:equipment_category_id])
+  #   @transformer.equipment_category_id = @equipment_category.id
+  #   if @transformer.save
+  #     redirect_to stations_path
+  #   else
+  #     render :new_transformer_resume_second
+  #   end
+  # end
+
+
 
   def transformer_params
     params.require(:transformer).permit(
@@ -51,7 +75,14 @@ class TransformersController < ApplicationController
            :manufacture_number    ,    #出厂序号
            :installation_date     ,    #安装日期
            :commissioning_date    ,   #投运日期
-           :remark                , )
+           :remark                ,
+           :tapping_switch        ,
+           :lowside_current       ,
+           :lowside_voltage       ,
+           :highside_current      ,
+           :highside_voltage      ,
+           :ancillary_device      ,
+           :connection_diagram )
   end
 
 end

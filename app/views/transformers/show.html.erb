@@ -1,11 +1,14 @@
-<h3><%= @transformer.station.name %><%= @transformer.equipment_category.name %>明细表</h3>
+<h3><%= @transformer.station.name %><%= @transformer.equipment_category.name %>履历表</h3>
+
+<!-- 变压器基本信息模块 -->
+
 <div class="transformer_resume_frame">
 
-  <div class="">
+  <div class="first-part-1">
     <p>技 术 参 数 </p>
   </div>
 
-  <div class="">
+  <div class="first-part">
     <div><b>运行编号</b></div>
     <div><%= @transformer.running_number%></div>
     <div><b>空载电流</b></div>
@@ -14,7 +17,7 @@
     <div><%= @transformer.total_weight%></div>
   </div>
 
-  <div class="">
+  <div class="first-part">
     <div><b>型号</b></div>
     <div><%= @transformer.standard%></div>
     <div><b>空载消耗</b></div>
@@ -23,7 +26,7 @@
     <div><%= @transformer.station.name%></div>
   </div>
 
-  <div class="">
+  <div class="first-part">
     <div><b>额定电容</b></div>
     <div><%= @transformer.rated_volume%></div>
     <div><b>短路消耗</b></div>
@@ -32,7 +35,7 @@
     <div><%= @transformer.manufacture_number%></div>
   </div>
 
-  <div class="">
+  <div class="first-part">
     <div><b>额定电压</b></div>
     <div><%= @transformer.rated_voltage%></div>
     <div><b>阻抗电压</b></div>
@@ -41,7 +44,7 @@
     <div><%= @transformer.manufacture_date%></div>
   </div>
 
-  <div class="">
+  <div class="first-part">
     <div><b>额定电流</b></div>
     <div><%= @transformer.rated_current%></div>
     <div><b>绝缘油号</b></div>
@@ -50,7 +53,7 @@
     <div><%= %></div>
   </div>
 
-  <div class="">
+  <div class="first-part">
     <div><b>相数</b></div>
     <div><%= @transformer.phase%></div>
     <div><b>油重</b></div>
@@ -59,7 +62,7 @@
     <div><%= @transformer.installation_date%></div>
   </div>
 
-  <div class="">
+  <div class="first-part">
     <div><b>接线组别</b></div>
     <div><%= @transformer.connection_group%></div>
     <div><b>器身重</b></div>
@@ -68,7 +71,7 @@
     <div><%= @transformer.commissioning_date%></div>
   </div>
 
-  <div class="">
+  <div class="first-part">
     <div><b>冷却方式</b></div>
     <div><%= @transformer.cooling_method%></div>
     <div><b>附件重</b></div>
@@ -76,6 +79,88 @@
     <div><b></b></div>
     <div><%= @transformer.running_number%></div>
   </div>
+
+  <div class="second-part">
+    <div><b>分接开关位置</b></div>
+    <div><b>低压侧</b></div>
+    <div><b>高压侧</b></div>
+    <div><b>连接图</b></div>
+  </div>
+
+  <div class="third-part">
+    <div class="third-part-1"><b>挡</b></div>
+    <div><b>电压</b></div>
+    <div><b>电流</b></div>
+    <div><b>电压</b></div>
+    <div><b>电流</b></div>
+    <div class="third-part-2">
+      <% if @transformer.connection_diagram.present? %>
+        <%= image_tag(transformer.connection_diagram.thumb.url)%>
+      <% end %>
+    </div>
+
+    <div class="third-part-1"><%= @transformer.tapping_switch%></div>
+    <div><%= @transformer.lowside_current%></div>
+    <div><%= @transformer.lowside_voltage%></div>
+    <div><%= @transformer.highside_current%></div>
+    <div><%= @transformer.highside_voltage%></div>
+    <div class="third-part-3">
+      <div><b>附属装置</b></div>
+      <div><%= @transformer.ancillary_device%> </div>
+    </div>
+  </div>
+  <!-- 编辑变压器履历第二部分入口 -->
+  <%= link_to("编辑技术参数", edit_equipment_category_transformer_path)%>
+</div>
+
+
+<!-- 运行记录模块  -->
+
+<div class="transformer-running-record">
+   <div > <p>运行记录</p></div>
+   <div class="part-1">
+     <div class="part-1-0">年度</div>
+     <div class="part-1-0">运行小时 </div>
+     <div class="part-1-1">
+       <div class="part-1-1-1"> 过负荷 </div>
+       <div class="part-1-1-2"> 次数 </div>
+       <div class="part-1-1-2"> 累计时间 </div>
+     </div>
+     <div class="part-1-0">利用率 </div>
+     <div class="part-1-0"> 承受短路电流次数 </div>
+     <div class="part-1-2"> 记事 </div>
+   </div>
+   <% @transformer.running_records.each do |r|%>
+   <div class="part-2">
+     <div> <%= r.year%> </div>
+     <div> <%= r.operation_hours%> </div>
+     <div> <%= r.overload_times%> </div>
+     <div> <%= r.overload_cumulative_time%> </div>
+     <div> <%= r.utilize_percentage%> </div>
+     <div> <%= r.short_circuit_time%> </div>
+     <div> <%= r.record%> </div>
+   </div>
+   <% end %>
+</div>
+
+<!-- 质量鉴定模块 -->
+<div class="quanlity_authanticate_record">
+  <div class="part-0"><p>质量鉴定记录</p></div>
+
+  <div class="part-1">
+    <div>年度</div>
+    <div>等级</div>
+    <div class="part-1-1">主要缺陷</div>
+  </div>
+
+  <% @transformer.quanlity_authanticate_records.each do |q|%>
+    <div class="part-1">
+      <div><%= q.year%></div>
+      <div><%= q.grade%></div>
+      <div class="part-1-1"><%= q.major_defects%></div>
+    </div>
+  <% end %>
+
 
 </div>
 
