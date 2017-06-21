@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class EquipmentResumesControllerTest < ActionDispatch::IntegrationTest
+class MaintenanceRecordsControllerTest < ActionDispatch::IntegrationTest
   # test "the truth" do
   #   assert true
   # end

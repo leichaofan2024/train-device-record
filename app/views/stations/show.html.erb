@@ -2,7 +2,12 @@
 <hr>
 <% @equipment_categories.each do |e| %>
   <div class="equipment-detail">
-    <strong id= "equipmnet-detail-<%= e.id%>"> <%= e.name %>明细 </strong>
-    
+    <% case e.name %>
+    <% when "变压器" %>
+      <%= render :partial => "transformer_info", locals:{equipment_category: e} %>
+    <% when "断路器" %>
+      <% %>
+    <% end %>
+
   </div>
 <% end %>

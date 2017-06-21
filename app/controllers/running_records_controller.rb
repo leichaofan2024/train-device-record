@@ -1,0 +1,2 @@
+class RunningRecordsController < ApplicationController
+end

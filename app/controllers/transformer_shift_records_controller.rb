@@ -1,0 +1,2 @@
+class TransformerShiftRecordsController < ApplicationController
+end

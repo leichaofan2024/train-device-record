@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170616014056) do
+ActiveRecord::Schema.define(version: 20170620092125) do
 
   create_table "equipment_categories", force: :cascade do |t|
     t.string   "name"
@@ -54,7 +54,7 @@ ActiveRecord::Schema.define(version: 20170616014056) do
   end
 
   create_table "running_records", force: :cascade do |t|
-    t.integer  "transfomer_id"
+    t.integer  "transformer_id"
     t.string   "year"
     t.string   "operation_hours"
     t.string   "overload_times"

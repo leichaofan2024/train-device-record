@@ -1,5 +1,5 @@
 <h3><%= @transformer.station.name %><%= @transformer.equipment_category.name %>明细表</h3>
-<div class="equipment_resume_frame">
+<div class="transformer_resume_frame">
 
   <div class="">
     <p>技 术 参 数 </p>
@@ -84,24 +84,5 @@
   <%= @transformer.equipment_category.name %>履历列表
 </h3>
 <div class="pull-right">
-  <%= link_to("创建履历", new_equipment_category_transformer_equipment_resume_path(@equipment_category,@transformer)) %>
+  <%= link_to("创建履历", "#") %>
 </div>
-
-<table class= "table table-bordered">
-  <thead>
-    <th>履历序号</th>
-    <th>创建时间</th>
-    <th>查看履历</th>
-  </thead>
-  <tbody>
-    <% n = 0%>
-    <% @equipment_resumes.each do |e| %>
-      <% n += 1 %>
-      <tr>
-        <td><%= n %></td>
-        <td><%= %></td>
-        <td><%= %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>

@@ -3,22 +3,23 @@ Rails.application.routes.draw do
   devise_for :users, :controllers => {:registrations => "users/registrations"}
   root "welcome#index"
   resources :stations do
+
     collection do
       post :category_new
-    end
-    member do
-      post :transformer_new
     end
   end
 
 
   resources :factories
   resources :equipment_categories do
+    resources :transformers do
+      resources :running_records
+      resources :quanlity_authanticate_records
+      resources :maintenance_records
+      resources :transformer_shift_records
+    end
     collection do
       get :admin_index
-    end 
-    resources :transformers do
-      resources :equipment_resumes
     end
   end
 

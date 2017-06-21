@@ -1,0 +1,2 @@
+class QuanlityAuthanticateRecordsController < ApplicationController
+end
