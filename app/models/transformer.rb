@@ -6,4 +6,6 @@ class Transformer < ApplicationRecord
   has_many :quanlity_authanticate_records
   has_many :maintenance_records
   has_many :transformer_shift_records
+  has_many :run_records
+  has_many :working_records
 end

@@ -10,19 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170621022417) do
+ActiveRecord::Schema.define(version: 20170621134902) do
 
   create_table "equipment_categories", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.string   "description"
-  end
-
-  create_table "equipment_resumes", force: :cascade do |t|
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
-    t.integer  "transformer_id"
   end
 
   create_table "factories", force: :cascade do |t|
@@ -51,6 +45,19 @@ ActiveRecord::Schema.define(version: 20170621022417) do
     t.string   "major_defects"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
+  end
+
+  create_table "run_records", force: :cascade do |t|
+    t.integer  "transformer_id"
+    t.string   "year"
+    t.string   "operation_hours"
+    t.string   "overload_times"
+    t.string   "overload_cumulative_time"
+    t.string   "utilize_percentage"
+    t.string   "short_circuit_time"
+    t.string   "record"
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
   end
 
   create_table "running_records", force: :cascade do |t|
@@ -147,6 +154,19 @@ ActiveRecord::Schema.define(version: 20170621022417) do
     t.integer  "station_id"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  end
+
+  create_table "working_records", force: :cascade do |t|
+    t.integer  "transformer_id"
+    t.string   "year"
+    t.string   "operation_hours"
+    t.string   "overload_times"
+    t.string   "overload_cumulative_time"
+    t.string   "utilize_percentage"
+    t.string   "short_circuit_time"
+    t.string   "record"
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
   end
 
 end

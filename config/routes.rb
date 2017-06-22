@@ -17,6 +17,8 @@ Rails.application.routes.draw do
       resources :quanlity_authanticate_records
       resources :maintenance_records
       resources :transformer_shift_records
+      resources :run_records
+      resources :working_records
     end
     collection do
       get :admin_index

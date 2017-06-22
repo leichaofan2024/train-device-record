@@ -110,14 +110,15 @@
     </div>
   </div>
   <!-- 编辑变压器履历第二部分入口 -->
-  <%= link_to("编辑技术参数", edit_equipment_category_transformer_path)%>
 </div>
+<%= link_to("编辑技术参数", edit_equipment_category_transformer_path)%>
+
 
 
 <!-- 运行记录模块  -->
 
 <div class="transformer-running-record">
-   <div > <p>运行记录</p></div>
+   <div > <p><b>运行记录</b></p></div>
    <div class="part-1">
      <div class="part-1-0">年度</div>
      <div class="part-1-0">运行小时 </div>
@@ -130,7 +131,8 @@
      <div class="part-1-0"> 承受短路电流次数 </div>
      <div class="part-1-2"> 记事 </div>
    </div>
-   <% @transformer.running_records.each do |r|%>
+
+   <% @transformer.working_records.each do |r|%>
    <div class="part-2">
      <div> <%= r.year%> </div>
      <div> <%= r.operation_hours%> </div>
@@ -142,32 +144,82 @@
    </div>
    <% end %>
 </div>
+<%= link_to("新增记录", new_equipment_category_transformer_working_record_path(@equipment_category, @transformer))%>
+
 
 <!-- 质量鉴定模块 -->
-<div class="quanlity_authanticate_record">
-  <div class="part-0"><p>质量鉴定记录</p></div>
+<div class="quanlity-authanticate-record">
+  <div class="part-0"><p><b>质量鉴定记录</b></p></div>
 
   <div class="part-1">
-    <div>年度</div>
-    <div>等级</div>
-    <div class="part-1-1">主要缺陷</div>
+    <div class="part-1-0"><b>年度</b></div>
+    <div class="part-1-0"><b>等级</b></div>
+    <div class="part-1-1"><b>主要缺陷</b></div>
   </div>
 
   <% @transformer.quanlity_authanticate_records.each do |q|%>
     <div class="part-1">
-      <div><%= q.year%></div>
-      <div><%= q.grade%></div>
+      <div class="part-1-0"><%= q.year %></div>
+      <div class="part-1-0"><%= q.grade %></div>
       <div class="part-1-1"><%= q.major_defects%></div>
     </div>
   <% end %>
-
-
 </div>
+  <%= link_to("添加记录", new_equipment_category_transformer_quanlity_authanticate_record_path(@equipment_category,@transformer) )%>
+
+<% n=0 %>
+<div><h4>大修、中修及改造记录</h4> </div>
+<% @transformer.maintenance_records.each do |m| %>
+  <div class="maintenance-record">
+    <div class="part-0"><p><b>记录<%= n+=1 %></b></p></div>
+    <div >
+      <div class="part-1"><b> 日期 </b></div>
+      <div class="part-1"><%= m.date %> </div>
+      <div class="part-1"><b> 修程 </b></div>
+      <div class="part-1"><%= m.maintenance_process%> </div>
+      <div class="part-1"><b> 承修单位 </b></div>
+      <div class="part-1-1"><%= m.maintenance_unit %> </div>
+    </div>
+    <div class="">
+      <div class="part-2"><b>费用</b> </div>
+      <div class="part-2-1"><%= m.cost %></div>
+      <div class="part-2"><b>检修负责人</b> </div>
+      <div class="part-2-2"><%= m.overhaul_incharge %> </div>
+    </div>
+    <div class="">
+      <div class="part-3"><b>主要缺陷</b> </div>
+      <div class="part-3-1"><%= m.major_defects %> </div>
+    </div>
+    <div class="">
+      <div class="part-3"><b>修理情况</b> </div>
+      <div class="part-3-1"> <%= m.maintenance_situation %></div>
+    </div>
+  </div>
+<% end %>
+<%= link_to("添加改造记录", new_equipment_category_transformer_maintenance_record_path(@equipment_category, @transformer))%>
 
 
-<h3><%= @transformer.station.name %><br>
-  <%= @transformer.equipment_category.name %>履历列表
-</h3>
-<div class="pull-right">
-  <%= link_to("创建履历", "#") %>
+<div class="station-equipment-ship">
+  <div class="part-0"> 主变移交记录</div>
+  <div class="">
+    <div class="part-1"><b>迁入（出）日期</b> </div>
+    <div class="part-1"><b>移设原因</b> </div>
+    <div class="part-1-1"><b>移交单位</b> </div>
+    <div class="part-1"><b>经办人</b> </div>
+    <div class="part-1-1"><b>接收单位</b> </div>
+    <div class="part-1"><b>经办人</b> </div>
+    <div class="part-1"><b>投运日期</b> </div>
+  </div>
+  <% @transformer.transformer_shift_records.each do |t|%>
+  <div class="">
+    <div class="part-1"> <%= t.shift_in_date%></div>
+    <div class="part-1"><%= t.shift_reason%></div>
+    <div class="part-1-1"><%= t.shift_out_company%></div>
+    <div class="part-1"><%= t.shift_out_agent%></div>
+    <div class="part-1-1"><%= t.reciving_company%></div>
+    <div class="part-1"><%= t.shift_in_agent%></div>
+    <div class="part-1"><%= t.commissioning_date%></div>
+  </div>
+  <% end %>
 </div>
+<%= link_to("添加主变移交记录", new_equipment_category_transformer_transformer_shift_record_path(@equipment_category, @transformer))%>

@@ -1,3 +1,3 @@
 class RunningRecord < ApplicationRecord
-  belongs_to :transformer 
+    belongs_to :transformer
 end
