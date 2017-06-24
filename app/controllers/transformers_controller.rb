@@ -22,6 +22,7 @@ class TransformersController < ApplicationController
     if @transformer.save
       redirect_to station_path(current_station)
     end
+  end 
 
   def edit
     @equipment_category = EquipmentCategory.find(params[:equipment_category_id])

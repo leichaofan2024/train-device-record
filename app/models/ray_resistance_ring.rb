@@ -1,0 +1,2 @@
+class RayResistanceRing < ApplicationRecord
+end
