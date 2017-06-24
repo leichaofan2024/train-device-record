@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170624033619) do
+ActiveRecord::Schema.define(version: 20170624033911) do
 
   create_table "circuit_breakers", force: :cascade do |t|
     t.integer  "station_id"
@@ -46,6 +46,33 @@ ActiveRecord::Schema.define(version: 20170624033619) do
     t.date     "manufacture_date"
     t.date     "commissioning_date"
     t.string   "remark"
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
+  end
+
+  create_table "current_transformers", force: :cascade do |t|
+    t.integer  "station_id"
+    t.integer  "equipment_category_id"
+    t.integer  "factory_id"
+    t.string   "running_number"
+    t.string   "standard"
+    t.string   "rated_voltage"
+    t.string   "rated_current"
+    t.string   "insulation_oil"
+    t.string   "total_weight"
+    t.string   "current_persent"
+    t.string   "first_class_coil"
+    t.string   "first_coil_load"
+    t.string   "second_class_coil"
+    t.string   "second_coil_load"
+    t.string   "status"
+    t.date     "manufacture_date"
+    t.string   "manufacture_number"
+    t.date     "commissioning_date"
+    t.string   "remark"
+    t.string   "category_one"
+    t.string   "category_two"
+    t.string   "year"
     t.datetime "created_at",            null: false
     t.datetime "updated_at",            null: false
   end
@@ -120,6 +147,32 @@ ActiveRecord::Schema.define(version: 20170624033619) do
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
     t.integer  "transformer_id"
+  end
+
+  create_table "potential_transformers", force: :cascade do |t|
+    t.integer  "station_id"
+    t.integer  "equipment_category_id"
+    t.integer  "factory_id"
+    t.string   "running_number"
+    t.string   "standard"
+    t.string   "voltage_persent"
+    t.string   "rated_voltage"
+    t.string   "phase"
+    t.string   "half_capacity"
+    t.string   "one_capacity"
+    t.string   "three_capacity"
+    t.string   "max_capacity"
+    t.string   "insulation_oil"
+    t.string   "total_weight"
+    t.date     "manufacture_date"
+    t.string   "manufacture_number"
+    t.date     "commissioning_date"
+    t.string   "remark"
+    t.string   "category_one"
+    t.string   "category_two"
+    t.string   "year"
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
   end
 
   create_table "quanlity_authanticate_records", force: :cascade do |t|
