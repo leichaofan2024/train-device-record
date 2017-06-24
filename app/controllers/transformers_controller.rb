@@ -1,13 +1,17 @@
 class TransformersController < ApplicationController
   def create
-
+    @equipment_category = Equipment_category.find(params[:id])
     @transformer = Transformer.new(transformer_params)
+    @equipment_category_id = @transformer.id
+    
     if @transformer.save
       redirect_to stations_path
-    
+
     end
   end
 
+
+private
   def transformer_params
     params.require(:transformer).permit(
            :equipment_category_id ,   #
