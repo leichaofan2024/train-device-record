@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html style="height:100%;">
   <head>
     <title>TrainDeviceRecord</title>
     <%= csrf_meta_tags %>
@@ -8,37 +8,36 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
-    <div class="col-md-3 nav">
-      <li class="drodown">
-         <a href="#" class="dropdown-toggle clearfix" data-toggle= "dropdown" style="height:50px;">
-           所有机构
-         </a>
-         <ul class="dropdown-menu">
-           <% Station.all.each do |station| %>
-             <li><%= link_to(station.name, station_path(station)) %></li>
-             <li><%= %></li>
-           <% end %>
-             <li><%= link_to("返回", stations_path)%></li>
-             <li class="divider"></li>
-         </ul>
-      </li>
-      <li class="drodown">
-         <a href="#" class="dropdown-toggle clearfix" data-toggle= "dropdown" style="height:50px;">
-           所有设备
-         </a>
-         <ul class="dropdown-menu">
-           <% EquipmentCategory.all.each do |equipment_category| %>
-             <li><%= link_to(equipment_category.name, "#")%></li>
-           <% end %>
-            <li><%= link_to("返回", equipment_categories_path)%></li>
-             <li class="divider"></li>
-         </ul>
-      </li>
-    </div>
-    <div class="col-md-9">
-      <%= yield %>
+  <body style="height:100%;">
+    <%= render "common/navbar" %>
+    <%= render "common/flashes" %>
+    <div class="col-md-2">
+      <div class="side-bar">
+        <% if current_user.present? %>
+          <div class="side-bar-categoy">
+
+            <% current_station.equipment_categories.all.each do |e| %>
+
+               <a href="#equipmnet-detail-<%= e.id%>"><%= e.name %></a>
+            <% end %>
+          </div>
+          <hr>
+          <div class="side-bar-option">
+            <a href="/equipment_categories">设备管理</a>
+            <a href="/equipment_categories/admin_index">添加设备库</a>
+            <a href="/stations/<%= current_station.id%>"> 返回</a>
+          </div>
+        <% end %>
+      </div>
     </div>
 
+    <div class="application-frame ">
+      <div class="col-md-10">
+        <%= yield %>
+      </div>
+    </div>
+
+
+    <%= render "common/footer" %>
   </body>
 </html>

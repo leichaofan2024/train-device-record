@@ -1,0 +1,77 @@
+<strong id= "equipmnet-detail-<%= equipment_category.id%>"> <%= equipment_category.name %>明细 </strong>
+<table class = "table table-bordered table-striped equipment-info">
+  <thead>
+    <tr>
+      <th>编号</th>
+      <th>规格型号</th>
+      <th>运行编号</th>
+      <th>额定电压</th>
+      <th>额定电流</th>
+      <th>额定电容</th>
+      <th>相数</th>
+      <th>接线组别</th>
+      <th>冷却方式</th>
+      <th>空载电流</th>
+      <th>空载损耗</th>
+      <th>短路损耗</th>
+      <th>阻抗电压</th>
+      <th>绝缘油号</th>
+      <th>油重</th>
+      <th>器身重</th>
+      <th>附件重</th>
+      <th>总重</th>
+      <th>状态</th>
+      <th>出厂日期</th>
+      <th>出厂序号</th>
+      <th>安装日期</th>
+      <th>投运日期</th>
+      <th>备注</th>
+      <th>分接开关</th>
+      <th>低压侧电流</th>
+      <th>低压侧电压</th>
+      <th>高侧压电流</th>
+      <th>高压侧电压</th>
+      <th>附属装置</th>
+      <th>履历</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% n = 0%>
+    <% equipment_category.transformers.where(station_id: @station.id).each do |t| %>
+
+      <tr>
+        <td><%= n += 1%></td>
+        <td> <%= t.standard           %> </td>
+        <td> <%= t.running_number     %> </td>
+        <td> <%= t.rated_voltage      %> </td>
+        <td> <%= t.rated_current      %> </td>
+        <td> <%= t.rated_volume       %> </td>
+        <td> <%= t.phase              %> </td>
+        <td> <%= t.connection_group   %> </td>
+        <td> <%= t.cooling_method     %> </td>
+        <td> <%= t.noload_current     %> </td>
+        <td> <%= t.noload_loss        %> </td>
+        <td> <%= t.short_circuit_loss %> </td>
+        <td> <%= t.impedance_voltage  %> </td>
+        <td> <%= t.insulation_oil     %> </td>
+        <td> <%= t.oil_weight         %> </td>
+        <td> <%= t.suttle             %> </td>
+        <td> <%= t.affix_weight       %> </td>
+        <td> <%= t.total_weight       %> </td>
+        <td> <%= t.status             %> </td>
+        <td> <%= t.manufacture_date   %> </td>
+        <td> <%= t.manufacture_number %> </td>
+        <td> <%= t.commissioning_date %> </td>
+        <td> <%= t.installation_date  %> </td>
+        <td> <%= t.remark             %> </td>
+        <td> <%= t.tapping_switch     %> </td>
+        <td> <%= t.lowside_current    %> </td>
+        <td> <%= t.lowside_voltage    %> </td>
+        <td> <%= t.highside_current   %> </td>
+        <td> <%= t.highside_voltage   %> </td>
+        <td> <%= t.ancillary_device   %> </td>
+        <td> <%= link_to("查看履历",equipment_category_transformer_path(equipment_category,t))%></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

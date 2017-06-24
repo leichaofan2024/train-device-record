@@ -1,14 +1,11 @@
 Rails.application.routes.draw do
-  devise_for :users
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-
-  root "stations#index"
+  devise_for :users, :controllers => {:registrations => "users/registrations"}
+  root "welcome#index"
   resources :stations do
+
     collection do
       post :category_new
-    end
-    member do
-      post :transformer_new
     end
   end
 
@@ -16,8 +13,14 @@ Rails.application.routes.draw do
   resources :factories
   resources :equipment_categories do
     resources :transformers do
-      resources :equipment_resumes
-    end 
+      resources :quanlity_authanticate_records
+      resources :maintenance_records
+      resources :transformer_shift_records
+      resources :move_records
+    end
+    collection do
+      get :admin_index
+    end
   end
 
 

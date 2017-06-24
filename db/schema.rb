@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170615013305) do
+ActiveRecord::Schema.define(version: 20170623075621) do
 
   create_table "equipment_categories", force: :cascade do |t|
     t.string   "name"
@@ -19,16 +19,45 @@ ActiveRecord::Schema.define(version: 20170615013305) do
     t.string   "description"
   end
 
-  create_table "equipment_resumes", force: :cascade do |t|
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
-    t.integer  "transformer_id"
-  end
-
   create_table "factories", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "maintenance_records", force: :cascade do |t|
+    t.integer  "transformer_id"
+    t.string   "date"
+    t.string   "maintenance_process"
+    t.string   "maintenance_unit"
+    t.string   "cost"
+    t.string   "overhaul_incharge"
+    t.string   "major_defects"
+    t.string   "maintenance_situation"
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
+  end
+
+  create_table "move_records", force: :cascade do |t|
+    t.date     "year"
+    t.string   "operation_hours"
+    t.string   "overload_time"
+    t.string   "overload_cumulative_time"
+    t.string   "utilize_percentage"
+    t.string   "short_circuit_time"
+    t.string   "run_record"
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+    t.integer  "transformer_id"
+  end
+
+  create_table "quanlity_authanticate_records", force: :cascade do |t|
+    t.integer  "transformer_id"
+    t.string   "year"
+    t.string   "grade"
+    t.string   "major_defects"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
   end
 
   create_table "station_equipment_ships", force: :cascade do |t|
@@ -42,6 +71,20 @@ ActiveRecord::Schema.define(version: 20170615013305) do
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "transformer_shift_records", force: :cascade do |t|
+    t.integer  "transformer_id"
+    t.date     "shift_in_date"
+    t.string   "shift_reason"
+    t.string   "shift_out_company"
+    t.date     "shift_out_agent"
+    t.string   "reciving_company"
+    t.string   "shift_in_agent"
+    t.date     "commissioning_date"
+    t.string   "breakdown_record"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
   end
 
   create_table "transformers", force: :cascade do |t|
@@ -73,6 +116,13 @@ ActiveRecord::Schema.define(version: 20170615013305) do
     t.string   "remark"
     t.datetime "created_at",            null: false
     t.datetime "updated_at",            null: false
+    t.string   "tapping_switch"
+    t.float    "lowside_current"
+    t.float    "lowside_voltage"
+    t.float    "highside_current"
+    t.float    "highside_voltage"
+    t.string   "ancillary_device"
+    t.string   "connection_diagram"
   end
 
   create_table "users", force: :cascade do |t|
@@ -88,6 +138,7 @@ ActiveRecord::Schema.define(version: 20170615013305) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
+    t.integer  "station_id"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

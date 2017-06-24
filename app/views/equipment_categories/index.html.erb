@@ -1,17 +1,15 @@
-<table class= "table">
-  <thead>
-    <tr>
-      <th>设备名称</th>
-      <th colspan="2">管理</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @equipment_categories.each do |e|%>
-    <tr>
-      <td><%= e.name %></td>
-      <td><%= link_to("编辑", edit_equipment_category_path(e))%></td>
-      <td><%= link_to("删除", edit_equipment_category_path(e))%></td>
-    </tr>
-    <% end %>
-  </tbody>
-</table>
+<div class="category-frame">
+  <% @equipment_categories.each_with_index do |e,index|%>
+      <% p= new_equipment_category_transformer_path(e) %>
+      <div class="category-item">
+        <%= link_to p,class: "btn btn-default" do %>
+          <%= e.name%>
+        <% end %>
+      </div>
+
+  <% end %>
+  <div class="add-category">
+    <%= link_to("添加设备分类", edit_station_path(current_station),class: "btn btn-default")%>
+  </div>
+
+</div>

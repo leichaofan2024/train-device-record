@@ -11,6 +11,7 @@ class StationsController < ApplicationController
     @station = Station.find(params[:id])
     @equipment_categories = @station.equipment_categories
 
+
   end
 
   def edit
@@ -20,7 +21,7 @@ class StationsController < ApplicationController
   def create
     @station = Station.new(station_params)
     if @station.save
-      redirect_to stations_path
+      redirect_to station_path(current_station)
     else
       render :new
     end
@@ -29,7 +30,7 @@ class StationsController < ApplicationController
   def update
     @station = Station.find(params[:id])
     if @station.update(station_params)
-      redirect_to stations_path
+      redirect_to equipment_categories_path
     else
       render :edit
     end
@@ -41,14 +42,8 @@ class StationsController < ApplicationController
     redirect_to stations_path
   end
 
-  def category_new
-    @equipment_category = EquipmentCategory.new
-  end
-  
-  def transformer_new
-    @station = Station.find(params[:id])
-    @transformer = Transformer.new
-  end
+
+
 
 
   private
