@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class RunRecordsControllerTest < ActionDispatch::IntegrationTest
+class MoveRecordTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

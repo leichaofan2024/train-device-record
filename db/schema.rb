@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170621134902) do
+ActiveRecord::Schema.define(version: 20170623075621) do
 
   create_table "equipment_categories", force: :cascade do |t|
     t.string   "name"
@@ -38,6 +38,19 @@ ActiveRecord::Schema.define(version: 20170621134902) do
     t.datetime "updated_at",            null: false
   end
 
+  create_table "move_records", force: :cascade do |t|
+    t.date     "year"
+    t.string   "operation_hours"
+    t.string   "overload_time"
+    t.string   "overload_cumulative_time"
+    t.string   "utilize_percentage"
+    t.string   "short_circuit_time"
+    t.string   "run_record"
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+    t.integer  "transformer_id"
+  end
+
   create_table "quanlity_authanticate_records", force: :cascade do |t|
     t.integer  "transformer_id"
     t.string   "year"
@@ -45,32 +58,6 @@ ActiveRecord::Schema.define(version: 20170621134902) do
     t.string   "major_defects"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
-  end
-
-  create_table "run_records", force: :cascade do |t|
-    t.integer  "transformer_id"
-    t.string   "year"
-    t.string   "operation_hours"
-    t.string   "overload_times"
-    t.string   "overload_cumulative_time"
-    t.string   "utilize_percentage"
-    t.string   "short_circuit_time"
-    t.string   "record"
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
-  end
-
-  create_table "running_records", force: :cascade do |t|
-    t.integer  "transformer_id"
-    t.string   "year"
-    t.string   "operation_hours"
-    t.string   "overload_times"
-    t.string   "overload_cumulative_time"
-    t.string   "utilize_percentage"
-    t.string   "short_circuit_time"
-    t.string   "record"
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
   end
 
   create_table "station_equipment_ships", force: :cascade do |t|
@@ -154,19 +141,6 @@ ActiveRecord::Schema.define(version: 20170621134902) do
     t.integer  "station_id"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
-  end
-
-  create_table "working_records", force: :cascade do |t|
-    t.integer  "transformer_id"
-    t.string   "year"
-    t.string   "operation_hours"
-    t.string   "overload_times"
-    t.string   "overload_cumulative_time"
-    t.string   "utilize_percentage"
-    t.string   "short_circuit_time"
-    t.string   "record"
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
   end
 
 end

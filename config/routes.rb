@@ -13,12 +13,10 @@ Rails.application.routes.draw do
   resources :factories
   resources :equipment_categories do
     resources :transformers do
-      resources :running_records
       resources :quanlity_authanticate_records
       resources :maintenance_records
       resources :transformer_shift_records
-      resources :run_records
-      resources :working_records
+      resources :move_records
     end
     collection do
       get :admin_index

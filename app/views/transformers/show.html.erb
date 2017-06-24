@@ -132,19 +132,20 @@
      <div class="part-1-2"> 记事 </div>
    </div>
 
-   <% @transformer.working_records.each do |r|%>
+   <% @transformer.move_records.each do |r|%>
    <div class="part-2">
      <div> <%= r.year%> </div>
      <div> <%= r.operation_hours%> </div>
-     <div> <%= r.overload_times%> </div>
+     <div> <%= r.overload_time%> </div>
      <div> <%= r.overload_cumulative_time%> </div>
      <div> <%= r.utilize_percentage%> </div>
      <div> <%= r.short_circuit_time%> </div>
-     <div> <%= r.record%> </div>
+     <div> <%= r.run_record%> </div>
    </div>
    <% end %>
 </div>
-<%= link_to("新增记录", new_equipment_category_transformer_working_record_path(@equipment_category, @transformer))%>
+<%= link_to("新增运行记录", new_equipment_category_transformer_move_record_path(@equipment_category, @transformer)) %>
+
 
 
 <!-- 质量鉴定模块 -->
