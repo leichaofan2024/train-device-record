@@ -1,0 +1,50 @@
+<strong id= "equipmnet-detail-<%= equipment_category.id%>"> <%= equipment_category.name %>明细 </strong>
+<table class = "table table-bordered table-striped equipment-info">
+  <thead>
+    <tr>
+      <th>顺序号</th>
+      <th>运行编号</th>
+      <th>规格型号</th>
+      <th>额定电压</th>
+      <th>机构型号</th>
+      <th>额定电流</th>
+      <th>额定短路</th>
+      <th>机构类别</th>
+      <th>流互型号</th>
+      <th>流互变比</th>
+      <th>气体压力</th>
+      <th>总重</th>
+      <th>状态</th>
+      <th>出厂序号</th>
+      <th>出厂日期</th>
+      <th>投运日期</th>
+      <th>备注</th>
+
+    </tr>
+  </thead>
+  <tbody>
+    <% n = 0%>
+    <% equipment_category.circuit_breakers.where(station_id: @station.id).each do |t| %>
+
+      <tr>
+        <td><%= n += 1%></td>
+        <td><%= t.running_number%></td>
+        <td><%= t.standard%></td>
+        <td><%= t.rated_voltage%></td>
+        <td><%= t.orgnization_model%></td>
+        <td><%= t.rated_current%></td>
+        <td><%= t.rated_short%></td>
+        <td><%= t.orgnization_sort%></td>
+        <td><%= t.current_transformer_type%></td>
+        <td><%= t.current_transformer_percent%></td>
+        <td><%= t.gas_pressure%></td>
+        <td><%= t.total_weight%></td>
+        <td><%= t.status%></td>
+        <td><%= t.manufacture_number%></td>
+        <td><%= t.manufacture_date%></td>
+        <td><%= t.commissioning_date%></td>
+        <td><%= t.remark%></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

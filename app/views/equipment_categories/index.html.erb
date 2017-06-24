@@ -1,10 +1,18 @@
 <div class="category-frame">
-  <% @equipment_categories.each_with_index do |e,index|%>
-      <% p= new_equipment_category_transformer_path(e) %>
+  <% @equipment_categories.each do |e|%>
       <div class="category-item">
-        <%= link_to p,class: "btn btn-default" do %>
-          <%= e.name%>
+        <% case e.name %>
+        <% when "变压器" %>
+          <%= link_to new_equipment_category_transformer_path(e),class: "btn btn-default" do %>
+            <%= e.name%>
+          <% end %>
+        <% when "断路器" %>
+          <%= link_to new_equipment_category_circuit_breaker_path(e),class: "btn btn-default" do %>
+            <%= e.name%>
+          <% end %>
+        <% when "隔离开关" %>
         <% end %>
+
       </div>
 
   <% end %>

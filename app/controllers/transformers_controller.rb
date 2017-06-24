@@ -22,7 +22,7 @@ class TransformersController < ApplicationController
     if @transformer.save
       redirect_to station_path(current_station)
     end
-  end 
+  end
 
   def edit
     @equipment_category = EquipmentCategory.find(params[:equipment_category_id])
@@ -35,18 +35,8 @@ class TransformersController < ApplicationController
     @transformer.update(transformer_params)
     redirect_to equipment_category_transformer_path(@equipment_category,@transformer)
   end
-  # def create_transformer_resume_second
-  #   @transformer = Transformer.new(transformer_params)
-  #   @equipment_category = EquipmentCategory.find(params[:equipment_category_id])
-  #   @transformer.equipment_category_id = @equipment_category.id
-  #   if @transformer.save
-  #     redirect_to stations_path
-  #   else
-  #     render :new_transformer_resume_second
-  #   end
-  # end
 
-
+  private 
 
   def transformer_params
     params.require(:transformer).permit(
