@@ -1,0 +1,24 @@
+<h3><%= @station.name %>变压器列表</h3>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>变压器序号</th>
+      <th>运行编号</th>
+      <th colspan="2">管理</th>
+      <th>设备履历</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% n = 0 %>
+    <% @transformers.each do |t| %>
+      <% n+=1 %>
+      <tr>
+        <td><%= n %></td>
+        <td><%= t.running_number %></td>
+        <td><%= link_to("编辑", "#")%></td>
+        <td><%= link_to("删除", "#")%></td>
+        <td><%= link_to("查看", equipment_category_transformer_path(t.equipment_category,t))%></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

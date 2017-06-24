@@ -1,0 +1,31 @@
+<div class= "col-md-8 col-md-offset-2">
+  <h3>添加变压器</h3>
+  <%= simple_form_for [@equipment_category,@transformer] do |f| %>
+    <%= f.select :station_id, @station.map{|u| [u.name,u.id]} %>
+    <%= f.select :factory_id, Factory.all.map{|u| [u.name,u.id]} %>
+    <%= f.input :standard ,label: "规格型号"%>
+    <%= f.input :running_number,label: "运行编号"%>
+    <%= f.input :rated_voltage,label: "额定电压"%>
+    <%= f.input :rated_current,label: "额定电流"%>
+    <%= f.input :rated_volume ,label: "额定电容"%>
+    <%= f.input :phase,label: "相数"%>
+    <%= f.input :connection_group ,label: "接线组别"%>
+    <%= f.input :cooling_method,label: "冷却方式"%>
+    <%= f.input :noload_current ,label: "空载电流"%>
+    <%= f.input :noload_loss,label: "空载损耗"%>
+    <%= f.input :short_circuit_loss,label: "短路损耗"%>
+    <%= f.input :impedance_voltage,label: "阻抗电压"%>
+    <%= f.input :insulation_oil,label: "绝缘油号"%>
+    <%= f.input :oil_weight,label: "油重"%>
+    <%= f.input :suttle,label: "器身重"%>
+    <%= f.input :affix_weight,label: "附件重"%>
+    <%= f.input :total_weight,label: "总重"%>
+    <%= f.input :status,label: "状态"%>
+    <%= f.input :manufacture_date,label: "出厂日期"%>
+    <%= f.input :manufacture_number,label: "出厂序号"%>
+    <%= f.input :installation_date,label: "安装日期"%>
+    <%= f.input :commissioning_date,label: "投运日期"%>
+    <%= f.input :remark,label: "备注"%>
+    <%= f.submit "提交", data: {disable_with: "提交中..."}%>
+  <% end %>
+</div>

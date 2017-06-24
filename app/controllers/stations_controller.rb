@@ -44,6 +44,7 @@ class StationsController < ApplicationController
   def category_new
     @equipment_category = EquipmentCategory.new
   end
+  
   def transformer_new
     @station = Station.find(params[:id])
     @transformer = Transformer.new

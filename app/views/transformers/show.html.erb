@@ -1,0 +1,107 @@
+<h3><%= @transformer.station.name %><%= @transformer.equipment_category.name %>明细表</h3>
+<div class="equipment_resume_frame">
+
+  <div class="">
+    <p>技 术 参 数 </p>
+  </div>
+
+  <div class="">
+    <div><b>运行编号</b></div>
+    <div><%= @transformer.running_number%></div>
+    <div><b>空载电流</b></div>
+    <div><%= @transformer.noload_current%></div>
+    <div><b>总重</b></div>
+    <div><%= @transformer.total_weight%></div>
+  </div>
+
+  <div class="">
+    <div><b>型号</b></div>
+    <div><%= @transformer.standard%></div>
+    <div><b>空载消耗</b></div>
+    <div><%= @transformer.noload_loss%></div>
+    <div><b>生产厂家</b></div>
+    <div><%= @transformer.station.name%></div>
+  </div>
+
+  <div class="">
+    <div><b>额定电容</b></div>
+    <div><%= @transformer.rated_volume%></div>
+    <div><b>短路消耗</b></div>
+    <div><%= @transformer.short_circuit_loss%></div>
+    <div><b>出厂序号</b></div>
+    <div><%= @transformer.manufacture_number%></div>
+  </div>
+
+  <div class="">
+    <div><b>额定电压</b></div>
+    <div><%= @transformer.rated_voltage%></div>
+    <div><b>阻抗电压</b></div>
+    <div><%= @transformer.impedance_voltage%></div>
+    <div><b>出厂日期</b></div>
+    <div><%= @transformer.manufacture_date%></div>
+  </div>
+
+  <div class="">
+    <div><b>额定电流</b></div>
+    <div><%= @transformer.rated_current%></div>
+    <div><b>绝缘油号</b></div>
+    <div><%= @transformer.insulation_oil%></div>
+    <div><b>安装地点</b></div>
+    <div><%= %></div>
+  </div>
+
+  <div class="">
+    <div><b>相数</b></div>
+    <div><%= @transformer.phase%></div>
+    <div><b>油重</b></div>
+    <div><%= @transformer.oil_weight%></div>
+    <div><b>安装日期</b></div>
+    <div><%= @transformer.installation_date%></div>
+  </div>
+
+  <div class="">
+    <div><b>接线组别</b></div>
+    <div><%= @transformer.connection_group%></div>
+    <div><b>器身重</b></div>
+    <div><%= @transformer.suttle%></div>
+    <div><b>投运日期</b></div>
+    <div><%= @transformer.commissioning_date%></div>
+  </div>
+
+  <div class="">
+    <div><b>冷却方式</b></div>
+    <div><%= @transformer.cooling_method%></div>
+    <div><b>附件重</b></div>
+    <div><%= @transformer.affix_weight%></div>
+    <div><b></b></div>
+    <div><%= @transformer.running_number%></div>
+  </div>
+
+</div>
+
+
+<h3><%= @transformer.station.name %><br>
+  <%= @transformer.equipment_category.name %>履历列表
+</h3>
+<div class="pull-right">
+  <%= link_to("创建履历", new_equipment_category_transformer_equipment_resume_path(@equipment_category,@transformer)) %>
+</div>
+
+<table class= "table table-bordered">
+  <thead>
+    <th>履历序号</th>
+    <th>创建时间</th>
+    <th>查看履历</th>
+  </thead>
+  <tbody>
+    <% n = 0%>
+    <% @equipment_resumes.each do |e| %>
+      <% n += 1 %>
+      <tr>
+        <td><%= n %></td>
+        <td><%= %></td>
+        <td><%= %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

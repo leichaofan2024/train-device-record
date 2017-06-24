@@ -9,6 +9,36 @@
   </head>
 
   <body>
-    <%= yield %>
+    <div class="col-md-3 nav">
+      <li class="drodown">
+         <a href="#" class="dropdown-toggle clearfix" data-toggle= "dropdown" style="height:50px;">
+           所有机构
+         </a>
+         <ul class="dropdown-menu">
+           <% Station.all.each do |station| %>
+             <li><%= link_to(station.name, station_path(station)) %></li>
+             <li><%= %></li>
+           <% end %>
+             <li><%= link_to("返回", stations_path)%></li>
+             <li class="divider"></li>
+         </ul>
+      </li>
+      <li class="drodown">
+         <a href="#" class="dropdown-toggle clearfix" data-toggle= "dropdown" style="height:50px;">
+           所有设备
+         </a>
+         <ul class="dropdown-menu">
+           <% EquipmentCategory.all.each do |equipment_category| %>
+             <li><%= link_to(equipment_category.name, "#")%></li>
+           <% end %>
+            <li><%= link_to("返回", equipment_categories_path)%></li>
+             <li class="divider"></li>
+         </ul>
+      </li>
+    </div>
+    <div class="col-md-9">
+      <%= yield %>
+    </div>
+
   </body>
 </html>

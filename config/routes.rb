@@ -14,8 +14,11 @@ Rails.application.routes.draw do
 
 
   resources :factories
-  resources :equipment_categories
-  resources :transformers
+  resources :equipment_categories do
+    resources :transformers do
+      resources :equipment_resumes
+    end 
+  end
 
 
 end
