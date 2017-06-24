@@ -10,7 +10,45 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170623075621) do
+ActiveRecord::Schema.define(version: 20170624033619) do
+
+  create_table "circuit_breakers", force: :cascade do |t|
+    t.integer  "station_id"
+    t.integer  "equipment_category_id"
+    t.integer  "factory_id"
+    t.string   "running_number"
+    t.string   "standard"
+    t.string   "rated_voltage"
+    t.string   "orgnization_model"
+    t.string   "rated_current"
+    t.string   "rated_short"
+    t.string   "orgnization_sort"
+    t.string   "current_transformer_type"
+    t.string   "current_transformer_percent"
+    t.string   "gas_pressure"
+    t.string   "total_weight"
+    t.string   "status"
+    t.string   "manufacture_number"
+    t.date     "manufacture_date"
+    t.date     "commissioning_date"
+    t.string   "remark"
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
+  end
+
+  create_table "composite_apparatus", force: :cascade do |t|
+    t.integer  "station_id"
+    t.integer  "equipment_category_id"
+    t.integer  "factory_id"
+    t.string   "running_number"
+    t.string   "rated_voltage"
+    t.string   "standard"
+    t.date     "manufacture_date"
+    t.date     "commissioning_date"
+    t.string   "remark"
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
+  end
 
   create_table "equipment_categories", force: :cascade do |t|
     t.string   "name"
@@ -23,6 +61,39 @@ ActiveRecord::Schema.define(version: 20170623075621) do
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "isolate_switches", force: :cascade do |t|
+    t.integer  "station_id"
+    t.integer  "equipment_category_id"
+    t.integer  "factory_id"
+    t.string   "running_number"
+    t.string   "standard"
+    t.string   "rated_voltage"
+    t.string   "rated_current"
+    t.string   "status"
+    t.date     "manufacture_date"
+    t.date     "commissioning_date"
+    t.string   "remark"
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
+  end
+
+  create_table "load_switches", force: :cascade do |t|
+    t.integer  "station_id"
+    t.integer  "equipment_category_id"
+    t.integer  "factory_id"
+    t.string   "running_number"
+    t.string   "standard"
+    t.string   "rated_voltage"
+    t.string   "rated_current"
+    t.string   "orgnization_model"
+    t.date     "manufacture_date"
+    t.string   "manufacture_number"
+    t.date     "commissioning_date"
+    t.string   "remark"
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
   end
 
   create_table "maintenance_records", force: :cascade do |t|

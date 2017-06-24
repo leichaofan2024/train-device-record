@@ -12,6 +12,12 @@ Rails.application.routes.draw do
 
   resources :factories
   resources :equipment_categories do
+    resources :circuit_breakers
+    resources :isolate_switches
+    resources :load_switches
+    resources :composite_apparatus
+    resources :current_transformers
+    resources :potential_transformers
     resources :transformers do
       resources :quanlity_authanticate_records
       resources :maintenance_records
