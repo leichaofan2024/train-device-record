@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170624043513) do
+ActiveRecord::Schema.define(version: 20170625043348) do
 
   create_table "batteries", force: :cascade do |t|
     t.integer  "station_id"
@@ -403,8 +403,19 @@ ActiveRecord::Schema.define(version: 20170624043513) do
   end
 
   create_table "ray_resistance_rings", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
+    t.string   "running_number"
+    t.string   "name"
+    t.string   "standard"
+    t.string   "rated_voltage"
+    t.date     "manufacture_date"
+    t.string   "manufacture_number"
+    t.date     "commissioning_date"
+    t.string   "remark"
+    t.integer  "station_id"
+    t.integer  "equipment_category_id"
+    t.integer  "factory_id"
   end
 
   create_table "remote_action_systems", force: :cascade do |t|

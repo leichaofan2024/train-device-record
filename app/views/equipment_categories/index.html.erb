@@ -38,22 +38,30 @@
             <%= link_to new_equipment_category_low_voltage_cabinet_path(e),class: "btn btn-default" do %>
               <%= e.name%>
             <% end %>
-            <% when "GIS柜" %>
-              <%= link_to new_equipment_category_gis_cupboard_path(e),class: "btn btn-default" do %>
-                <%= e.name%>
-              <% end %>
-              <% when "放电装置" %>
-                <%= link_to new_equipment_category_discharging_device_path(e),class: "btn btn-default" do %>
-                  <%= e.name%>
-                <% end %>
-              <% when "母线" %>
-                <%= link_to new_equipment_category_busbar_path(e),class: "btn btn-default" do %>
-                  <%= e.name%>
-                <% end %>
-              <% when "电缆" %>
-                <%= link_to new_equipment_category_busbar_path(e),class: "btn btn-default" do %>
-                  <%= e.name%>
-                <% end %>
+          <% when "GIS柜" %>
+            <%= link_to new_equipment_category_gis_cupboard_path(e),class: "btn btn-default" do %>
+              <%= e.name%>
+            <% end %>
+          <% when "放电装置" %>
+            <%= link_to new_equipment_category_discharging_device_path(e),class: "btn btn-default" do %>
+              <%= e.name%>
+            <% end %>
+          <% when "母线" %>
+            <%= link_to new_equipment_category_busbar_path(e),class: "btn btn-default" do %>
+              <%= e.name%>
+            <% end %>
+          <% when "电缆" %>
+            <%= link_to new_equipment_category_busbar_path(e),class: "btn btn-default" do %>
+              <%= e.name%>
+            <% end %>
+          <% when "抗雷圈" %>
+            <%= link_to new_equipment_category_ray_resistance_ring_path(e),class: "btn btn-default" do %>
+              <%= e.name%>
+            <% end %>
+          <% when "抗雷圈" %>
+            <%= link_to new_equipment_category_busbar_path(e),class: "btn btn-default" do %>
+              <%= e.name%>
+            <% end %>
 
 
 
