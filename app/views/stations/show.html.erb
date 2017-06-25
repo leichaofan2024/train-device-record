@@ -10,6 +10,9 @@
       <%= render :partial => "circuit_breaker_info", locals: {equipment_category: e} %>
     <% when "隔离开关" %>
       <%= render :partial => "isolate_switch_info", locals: { equipment_category: e}%>
+    <% when "负荷开关" %>
+      <%= render :partial => "load_switch_info", locals: { equipment_category: e} %>
     <% end %>
+
   </div>
 <% end %>
