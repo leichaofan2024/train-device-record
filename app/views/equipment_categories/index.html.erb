@@ -22,6 +22,10 @@
           <%= link_to new_equipment_category_apparatus_composite_path(e),class: "btn btn-default" do %>
             <%= e.name%>
           <% end %>
+        <% when "电流互感器" %>
+          <%= link_to new_equipment_category_current_transformer_path(e),class: "btn btn-default" do %>
+            <%= e.name%>
+          <% end %>
         <% end %>
 
       </div>

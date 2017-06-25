@@ -14,6 +14,8 @@
       <%= render :partial => "load_switch_info", locals: { equipment_category: e} %>
     <% when "组合电器（箱变）" %>
       <%= render :partial => "apparatus_composite_info", locals: { equipment_category: e} %>
+    <% when "电流互感器" %>
+      <%= render :partial => "current_transformer_info", locals: { equipment_category: e} %>
     <% end %>
 
   </div>
