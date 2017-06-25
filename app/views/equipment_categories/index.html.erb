@@ -38,6 +38,10 @@
           <%= link_to new_equipment_category_inductor_path(e),class: "btn btn-default" do %>
             <%= e.name%>
           <% end %>
+        <% when "固定无功补偿装置--放电线圈（电感器）" %>
+          <%= link_to new_equipment_category_discharge_coil_path(e),class: "btn btn-default" do %>
+            <%= e.name%>
+          <% end %>
         <% end %>
 
       </div>

@@ -1,0 +1,48 @@
+<strong id= "equipmnet-detail-<%= equipment_category.id%>"> <%= equipment_category.name %>明细 </strong>
+<table class = "table table-bordered table-striped equipment-info">
+  <thead>
+    <tr>
+      <th>顺序号</th>
+      <th>运行编号</th>
+      <th>规格型号</th>
+      <th>电压比（kv/kv)</th>
+      <th>额定电压(kv)</th>
+      <th>0.5容量(VA)</th>
+      <th>1.0容量(VA)</th>
+      <th>3.0容量(VA)</th>
+      <th>最大容量(VA)</th>
+      <th>绝缘油号</th>
+      <th>总重</th>
+      <th>生产厂家</th>
+      <th>出厂日期</th>
+      <th>出厂序号</th>
+      <th>投运日期</th>
+      <th>备注</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% n = 0%>
+    <% equipment_category.discharge_coils.where(station_id: @station.id).each do |t| %>
+
+      <tr>
+        <td><%= n += 1%></td>
+        <td><%= t.running_number%></td>
+        <td><%= t.standard%></td>
+        <td><%= t.voltage_persent%></td>
+        <td><%= t.rated_voltage%></td>
+        <td><%= t.half_capacity%></td>
+        <td><%= t.one_capacity%></td>
+        <td><%= t.three_capacity%></td>
+        <td><%= t.max_capacity%></td>
+        <td><%= t.insulation_oil%></td>
+        <td><%= t.total_weight%></td>
+
+        <td><%= t.factory.name%></td>
+        <td><%= t.manufacture_date%></td>
+        <td><%= t.manufacture_number%></td>
+        <td><%= t.commissioning_date%></td>
+        <td><%= t.remark%></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

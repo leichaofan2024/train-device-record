@@ -22,6 +22,8 @@
       <%= render :partial => "shunt_capacitor_info", locals: { equipment_category: e} %>
     <% when "固定无功补偿装置--电抗器" %>
       <%= render :partial => "inductor_info", locals: { equipment_category: e} %>
+    <% when "固定无功补偿装置--放电线圈（电感器）" %>
+      <%= render :partial => "discharge_coil_info", locals: { equipment_category: e} %>
     <% end %>
 
   </div>

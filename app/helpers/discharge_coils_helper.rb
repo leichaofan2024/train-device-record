@@ -1,0 +1,2 @@
+module DischargeCoilsHelper
+end
