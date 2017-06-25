@@ -5,19 +5,18 @@
       <th>顺序号</th>
       <th>运行编号</th>
       <th>规格型号</th>
+      <th>电压比（kv/kv)</th>
       <th>额定电压</th>
-      <th>机构型号</th>
-      <th>额定电流</th>
-      <th>额定短路</th>
-      <th>机构类别</th>
-      <th>流互型号</th>
-      <th>流互变比</th>
-      <th>气体压力</th>
+      <th>相数</th>
+      <th>0.5容量</th>
+      <th>1.0容量</th>
+      <th>3.0容量</th>
+      <th>最大容量</th>
+      <th>绝缘油号</th>
       <th>总重</th>
-      <th>状态</th>
       <th>生产厂家</th>
-      <th>出厂序号</th>
       <th>出厂日期</th>
+      <th>出厂序号</th>
       <th>投运日期</th>
       <th>备注</th>
       <th>设备分类1</th>
@@ -27,22 +26,21 @@
   </thead>
   <tbody>
     <% n = 0%>
-    <% equipment_category.current_transformers.where(station_id: @station.id).each do |t| %>
+    <% equipment_category.potential_transformers.where(station_id: @station.id).each do |t| %>
 
       <tr>
         <td><%= n += 1%></td>
         <td><%= t.running_number%></td>
         <td><%= t.standard%></td>
+        <td><%= t.voltage_persent%></td>
         <td><%= t.rated_voltage%></td>
-        <td><%= t.rated_current%></td>
+        <td><%= t.phase%></td>
+        <td><%= t.half_capacity%></td>
+        <td><%= t.one_capacity%></td>
+        <td><%= t.three_capacity%></td>
+        <td><%= t.max_capacity%></td>
         <td><%= t.insulation_oil%></td>
         <td><%= t.total_weight%></td>
-        <td><%= t.current_persent%></td>
-        <td><%= t.first_class_coil%></td>
-        <td><%= t.first_coil_load%></td>
-        <td><%= t.second_class_coil%></td>
-        <td><%= t.second_coil_load%></td>
-        <td><%= t.status%></td>
         <td><%= t.factory.name%></td>
         <td><%= t.manufacture_date%></td>
         <td><%= t.manufacture_number%></td>

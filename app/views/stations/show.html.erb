@@ -16,6 +16,8 @@
       <%= render :partial => "apparatus_composite_info", locals: { equipment_category: e} %>
     <% when "电流互感器" %>
       <%= render :partial => "current_transformer_info", locals: { equipment_category: e} %>
+    <% when "电压互感器" %>
+      <%= render :partial => "potential_transformer_info", locals: { equipment_category: e} %>
     <% end %>
 
   </div>
