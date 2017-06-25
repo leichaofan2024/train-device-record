@@ -15,3 +15,43 @@
  */
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "font-awesome";
+
+.application-frame{
+  min-height: 100%;
+  margin-top: -90px;
+  padding-top: 90px;
+  padding-bottom: 110px;
+  margin-bottom: -80px;
+  overflow:auto;
+}
+footer {
+  height:100px;
+  line-height: 80px;
+  background-color: #D0C671;
+  text-align: center;
+
+}
+
+.side-bar{
+  position:fixed;
+  width: 120px;
+  min-height:500px;
+  background-color: rgba(97,97,97 ,0.3);
+  top: 70px;
+  left:50px;
+  .side-bar-categoy{
+    a{
+      display: block;
+      font-size: 11px;
+      color:#0B1306;
+    }
+  }
+  .side-bar-option{
+    a{
+      display: block;
+      font-size: 11px;
+      color:#0B1306;
+    }
+  }
+}

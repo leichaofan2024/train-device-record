@@ -1,0 +1,12 @@
+
+
+<%= simple_form_for [@equipment_category,@transformer,@maintenance_record] do |f| %>
+  <%= f.input :date %>
+  <%= f.input :maintenance_process %>
+  <%= f.input :maintenance_unit %>
+  <%= f.input :cost %>
+  <%= f.input :overhaul_incharge %>
+  <%= f.input :major_defects%>
+  <%= f.input :maintenance_situation %>
+  <%= f.submit "提交", data: {:disable_with => "提交中..."}%>
+<% end %>

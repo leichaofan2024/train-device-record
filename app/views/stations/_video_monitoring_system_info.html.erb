@@ -1,0 +1,25 @@
+<strong id= "equipmnet-detail-<%= equipment_category.id%>"> <%= equipment_category.name %>明细 </strong>
+<table class = "table table-bordered table-striped equipment-info">
+  <thead>
+    <tr>
+      <th>编号</th>
+      <th>出厂序号</th>
+      <th>出厂日期</th>
+      <th>投运日期</th>
+      <th>备注</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% n = 0%>
+    <% equipment_category.video_monitoring_systems.where(station_id: @station.id).each do |t| %>
+
+      <tr>
+        <td> <%= n += 1%></td>
+        <td> <%= t.manufacture_number %> </td>
+        <td> <%= t.manufacture_date   %> </td>
+        <td> <%= t.commissioning_date %> </td>
+        <td> <%= t.remark             %> </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

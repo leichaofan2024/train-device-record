@@ -1,0 +1,2 @@
+module RayResistanceRingsHelper
+end

@@ -1,5 +1,4 @@
 <%= simple_form_for @station do |f| %>
   <%= f.input :name, label: "机构名称" %>
-  <%= f.association :equipment_categories,as: :check_boxes, label: "请勾选该机构拥有的设备类型" %>
-  <%= f.submit "创建", data: {disable_with: "提交中..."} %>
+    <%= f.submit "创建", data: {disable_with: "提交中..."} %>
 <% end %>

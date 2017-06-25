@@ -1,0 +1,2 @@
+module TerminalBoxesHelper
+end
