@@ -20,7 +20,7 @@ class EquipmentCategory < ApplicationRecord
     has_many :integrated_automation_systems
     has_many :failure_judgment_devices
     has_many :remote_action_systems
-    has_many :v_stop_sies
+    has_many :v_stop_systems
     has_many :terminal_boxes
     has_many :video_monitoring_systems
     has_many :other_tran_equipments

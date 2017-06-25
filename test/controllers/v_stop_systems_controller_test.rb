@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class VStopSyTest < ActiveSupport::TestCase
+class VStopSystemsControllerTest < ActionDispatch::IntegrationTest
   # test "the truth" do
   #   assert true
   # end

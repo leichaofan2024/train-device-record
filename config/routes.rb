@@ -30,7 +30,7 @@ Rails.application.routes.draw do
         resources :integrated_automation_systems
         resources :failure_judgment_devices
         resources :remote_action_systems
-        resources :v_stop_sies
+        resources :v_stop_systems
         resources :terminal_boxes
         resources :video_monitoring_systems
         resources :other_tran_equipments

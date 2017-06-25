@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170625093245) do
+ActiveRecord::Schema.define(version: 20170625103405) do
 
   create_table "apparatus_composites", force: :cascade do |t|
     t.integer  "station_id"
@@ -689,6 +689,20 @@ ActiveRecord::Schema.define(version: 20170625093245) do
   end
 
   create_table "v_stop_sies", force: :cascade do |t|
+    t.integer  "station_id"
+    t.integer  "equipment_category_id"
+    t.integer  "factory_id"
+    t.string   "standard"
+    t.integer  "wen_control_number"
+    t.integer  "control_number"
+    t.date     "manufacture_date"
+    t.date     "commissioning_date"
+    t.string   "remark"
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
+  end
+
+  create_table "v_stop_systems", force: :cascade do |t|
     t.integer  "station_id"
     t.integer  "equipment_category_id"
     t.integer  "factory_id"
