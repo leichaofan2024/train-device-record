@@ -1,0 +1,2 @@
+module GisCupboardsHelper
+end
