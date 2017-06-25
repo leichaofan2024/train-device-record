@@ -1,0 +1,41 @@
+<strong id= "equipmnet-detail-<%= equipment_category.id%>"> <%= equipment_category.name %>明细 </strong>
+<table class = "table table-bordered table-striped equipment-info">
+  <thead>
+    <tr>
+      <th>顺序号</th>
+      <th>运行编号</th>
+      <th>类别</th>
+      <th>规格型号</th>
+      <th>数量（台）</th>
+      <th>额定电压（KV）</th>
+      <th>额定电流（A）</th>
+      <th>容量</th>
+      <th>制造厂</th>
+      <th>出厂序号</th>
+      <th>出厂日期</th>
+      <th>投运日期</th>
+      <th>备注</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% n = 0%>
+    <% equipment_category.trends_inductors.where(station_id: @station.id).each do |t| %>
+
+      <tr>
+        <td><%= n += 1%></td>
+        <td><%= t.running_number%></td>
+        <td><%= t.category %></td>
+        <td><%= t.standard%></td>
+        <td><%= t.count%></td>
+        <td><%= t.rated_voltage%></td>
+        <td><%= t.rated_current%></td>
+        <td><%= t.capacity %></td>
+        <td><%= t.factory.name%></td>
+        <td><%= t.manufacture_number%></td>
+        <td><%= t.manufacture_date%></td>
+        <td><%= t.commissioning_date%></td>
+        <td><%= t.remark%></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
