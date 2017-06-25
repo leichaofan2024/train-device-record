@@ -1,0 +1,2 @@
+module ShuntCapacitorsHelper
+end
