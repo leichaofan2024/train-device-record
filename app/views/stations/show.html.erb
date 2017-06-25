@@ -28,6 +28,8 @@
       <%= render :partial => "trends_shunt_capacitor_info", locals: { equipment_category: e} %>
     <% when "动态无功补偿装置--电抗器" %>
       <%= render :partial => "trends_inductor_info", locals: { equipment_category: e} %>
+    <% when "动态无功补偿装置--放电线圈（电感器）" %>
+      <%= render :partial => "trends_discharge_coil_info", locals: { equipment_category: e} %>
     <% end %>
 
   </div>

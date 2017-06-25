@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170625042111) do
+ActiveRecord::Schema.define(version: 20170625082504) do
 
   create_table "apparatus_composites", force: :cascade do |t|
     t.integer  "station_id"
@@ -584,6 +584,7 @@ ActiveRecord::Schema.define(version: 20170625042111) do
     t.date     "commissioning_date"
     t.datetime "created_at",            null: false
     t.datetime "updated_at",            null: false
+    t.string   "remark"
   end
 
   create_table "trends_inductors", force: :cascade do |t|
