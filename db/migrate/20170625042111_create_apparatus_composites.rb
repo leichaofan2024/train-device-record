@@ -1,6 +1,6 @@
-class CreateCompositeApparatus < ActiveRecord::Migration[5.0]
+class CreateApparatusComposites < ActiveRecord::Migration[5.0]
   def change
-    create_table :composite_apparatus do |t|
+    create_table :apparatus_composites do |t|
       t.integer :station_id
       t.integer :equipment_category_id    #
       t.integer :factory_id               #

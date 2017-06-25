@@ -16,7 +16,7 @@ Rails.application.routes.draw do
         resources :circuit_breakers
         resources :isolate_switches
         resources :load_switches
-        resources :composite_apparatus
+        resources :apparatus_composites
         resources :current_transformers
         resources :potential_transformers
 

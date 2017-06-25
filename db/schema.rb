@@ -10,7 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170624043513) do
+ActiveRecord::Schema.define(version: 20170625042111) do
+
+  create_table "apparatus_composites", force: :cascade do |t|
+    t.integer  "station_id"
+    t.integer  "equipment_category_id"
+    t.integer  "factory_id"
+    t.string   "running_number"
+    t.string   "rated_voltage"
+    t.string   "standard"
+    t.date     "manufacture_date"
+    t.date     "commissioning_date"
+    t.string   "remark"
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
+  end
 
   create_table "batteries", force: :cascade do |t|
     t.integer  "station_id"

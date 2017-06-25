@@ -18,6 +18,10 @@
           <%= link_to new_equipment_category_load_switch_path(e),class: "btn btn-default" do %>
             <%= e.name%>
           <% end %>
+        <% when "组合电器（箱变）" %>
+          <%= link_to new_equipment_category_apparatus_composite_path(e),class: "btn btn-default" do %>
+            <%= e.name%>
+          <% end %>
         <% end %>
 
       </div>
