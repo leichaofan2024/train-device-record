@@ -11,6 +11,11 @@
             <%= e.name%>
           <% end %>
         <% when "隔离开关" %>
+          <%= link_to new_equipment_category_isolate_switch_path(e),class: "btn btn-default" do %>
+            <%= e.name%>
+          <% end %>
+        <% when "负荷开关" %>
+        
         <% end %>
 
       </div>

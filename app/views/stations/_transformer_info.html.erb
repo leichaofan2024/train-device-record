@@ -2,7 +2,7 @@
 <table class = "table table-bordered table-striped equipment-info">
   <thead>
     <tr>
-      <th>编号</th>
+      <th>顺序号</th>
       <th>规格型号</th>
       <th>运行编号</th>
       <th>额定电压</th>
@@ -21,6 +21,7 @@
       <th>附件重</th>
       <th>总重</th>
       <th>状态</th>
+      <th>生产厂家</th>
       <th>出厂日期</th>
       <th>出厂序号</th>
       <th>安装日期</th>
@@ -59,6 +60,7 @@
         <td> <%= t.affix_weight       %> </td>
         <td> <%= t.total_weight       %> </td>
         <td> <%= t.status             %> </td>
+        <td><%= t.factory.name%></td>
         <td> <%= t.manufacture_date   %> </td>
         <td> <%= t.manufacture_number %> </td>
         <td> <%= t.commissioning_date %> </td>
