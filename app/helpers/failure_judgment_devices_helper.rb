@@ -1,0 +1,2 @@
+module FailureJudgmentDevicesHelper
+end

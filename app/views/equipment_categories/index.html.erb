@@ -66,6 +66,77 @@
           <%= link_to new_equipment_category_insulation_device_path(e),class: "btn btn-default" do %>
             <%= e.name%>
           <% end %>
+
+        <% when "视频监控系统" %>
+          <%= link_to new_equipment_category_video_monitoring_system_path(e),class: "btn btn-default" do %>
+            <%= e.name%>
+          <% end %>
+        <% when "其他变电设备" %>
+          <%= link_to new_equipment_category_other_tran_equipment_path(e),class: "btn btn-default" do %>
+            <%= e.name%>
+          <% end %>
+        <% when "端子箱" %>
+          <%= link_to new_equipment_category_terminal_box_path(e),class: "btn btn-default" do %>
+            <%= e.name%>
+          <% end %>
+        <% when "V停系统" %>
+          <%= link_to new_equipment_category_v_stop_sy_path(e),class: "btn btn-default" do %>
+            <%= e.name%>
+          <% end %>
+        <% when "远动系统" %>
+          <%= link_to new_equipment_category_remote_action_system_path(e),class: "btn btn-default" do %>
+            <%= e.name%>
+          <% end %>
+        <% when "故障判断装置" %>
+          <%= link_to new_equipment_category_failure_judgment_device_path(e),class: "btn btn-default" do %>
+            <%= e.name%>
+          <% end %>
+        <% when "综合自动化系统" %>
+          <%= link_to new_equipment_category_integrated_automation_system_path(e),class: "btn btn-default" do %>
+            <%= e.name%>
+          <% end %>
+        <% when "低压盘-柜" %>
+          <%= link_to new_equipment_category_low_voltage_cabinet_path(e),class: "btn btn-default" do %>
+            <%= e.name%>
+          <% end %>
+        <% when "GIS柜" %>
+          <%= link_to new_equipment_category_gis_cupboard_path(e),class: "btn btn-default" do %>
+            <%= e.name%>
+          <% end %>
+        <% when "放电装置" %>
+          <%= link_to new_equipment_category_discharging_device_path(e),class: "btn btn-default" do %>
+            <%= e.name%>
+          <% end %>
+        <% when "母线" %>
+          <%= link_to new_equipment_category_busbar_path(e),class: "btn btn-default" do %>
+            <%= e.name%>
+          <% end %>
+        <% when "电缆" %>
+          <%= link_to new_equipment_category_busbar_path(e),class: "btn btn-default" do %>
+            <%= e.name%>
+          <% end %>
+        <% when "抗雷圈" %>
+          <%= link_to new_equipment_category_ray_resistance_ring_path(e),class: "btn btn-default" do %>
+            <%= e.name%>
+          <% end %>
+        <% when "避雷针" %>
+          <%= link_to new_equipment_category_lightning_rod_path(e),class: "btn btn-default" do %>
+            <%= e.name%>
+          <% end %>
+        <% when "避雷器" %>
+          <%= link_to new_equipment_category_surge_arrester_path(e),class: "btn btn-default" do %>
+            <%= e.name%>
+          <% end %>
+        <% when "直流电源装置-直流电源" %>
+          <%= link_to new_equipment_category_power_supply_path(e),class: "btn btn-default" do %>
+            <%= e.name%>
+          <% end %>
+        <% when "直流电源装置-蓄电池" %>
+          <%= link_to new_equipment_category_battery_path(e),class: "btn btn-default" do %>
+            <%= e.name%>
+          <% end %>
+
+
         <% end %>
 
       </div>

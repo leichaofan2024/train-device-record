@@ -36,6 +36,47 @@
       <%= render :partial => "trends_valve_controllable_info", locals: { equipment_category: e} %>
     <% when "动态无功补偿装置--绝缘在线检测设备" %>
       <%= render :partial => "insulation_device_info", locals: { equipment_category: e} %>
+    <% when "视频监控系统" %>
+      <%= render :partial => "video_monitoring_system_info", locals:{equipment_category: e} %>
+    <% when "其他变电设备" %>
+      <%= render :partial => "other_tran_equipment_info", locals:{equipment_category: e} %>
+    <% when "端子箱" %>
+      <%= render :partial => "terminal_box", locals:{equipment_category: e} %>
+    <% when "V停系统" %>
+      <%= render :partial => "v_stop_sys", locals:{equipment_category: e} %>
+    <% when "远动系统" %>
+      <%= render :partial => "remote_action_system", locals:{equipment_category: e} %>
+    <% when "故障判断装置" %>
+      <%= render :partial => "failure_judgment_device", locals:{equipment_category: e} %>
+    <% when "综合自动化系统" %>
+      <%= render :partial => "integrated_automation_system", locals:{equipment_category: e} %>
+    <% when "低压盘-柜" %>
+      <%= render :partial => "low_voltage_cabinet", locals:{equipment_category: e} %>
+    <% when "GIS柜" %>
+      <%= render :partial => "gis_cupboard", locals:{equipment_category: e} %>
+    <% when "放电装置" %>
+      <%= render :partial => "discharging_device", locals:{equipment_category: e} %>
+    <% when "母线" %>
+      <%= render :partial => "busbar", locals:{equipment_category: e} %>
+    <% when "电缆" %>
+      <%= render :partial => "busbar", locals:{equipment_category: e} %>
+    <% when "抗雷圈" %>
+      <%= render :partial => "ray_resistance_ring", locals:{equipment_category: e} %>
+    <% when "避雷针" %>
+      <%= render :partial => "lightning_rod", locals:{equipment_category: e} %>
+    <% when "避雷器" %>
+      <%= render :partial => "surge_arrester", locals:{equipment_category: e} %>
+    <% when "直流电源装置-直流电源" %>
+      <%= render :partial => "power_supply", locals:{equipment_category: e} %>
+    <% when "直流电源装置-蓄电池" %>
+      <%= render :partial => "battery", locals:{equipment_category: e} %>
+    <% when "避雷针" %>
+      <%= render :partial => "lightning_rod", locals:{equipment_category: e} %>
+    <% when "避雷针" %>
+      <%= render :partial => "lightning_rod", locals:{equipment_category: e} %>
+    <% when "避雷针" %>
+      <%= render :partial => "lightning_rod", locals:{equipment_category: e} %>
+
     <% end %>
 
   </div>
