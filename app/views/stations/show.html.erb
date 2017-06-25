@@ -26,6 +26,8 @@
       <%= render :partial => "gis_cupboard", locals:{equipment_category: e} %>
       <% when "放电装置" %>
       <%= render :partial => "discharging_device", locals:{equipment_category: e} %>
+      <% when "母线" %>
+      <%= render :partial => "busbar", locals:{equipment_category: e} %>
 
 
 

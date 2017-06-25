@@ -1,0 +1,2 @@
+module BusbarsHelper
+end
