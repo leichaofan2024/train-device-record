@@ -30,6 +30,8 @@
       <%= render :partial => "trends_inductor_info", locals: { equipment_category: e} %>
     <% when "动态无功补偿装置--放电线圈（电感器）" %>
       <%= render :partial => "trends_discharge_coil_info", locals: { equipment_category: e} %>
+    <% when "动态无功补偿装置--调压变压器" %>
+      <%= render :partial => "trends_regulating_transformer_info", locals: { equipment_category: e} %>
     <% end %>
 
   </div>

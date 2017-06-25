@@ -1,0 +1,2 @@
+module TrendsRegulatingTransformersHelper
+end
