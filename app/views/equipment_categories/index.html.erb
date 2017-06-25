@@ -66,6 +66,10 @@
             <%= link_to new_equipment_category_surge_arrester_path(e),class: "btn btn-default" do %>
               <%= e.name%>
             <% end %>
+            <% when "直流电源装置-直流电源" %>
+              <%= link_to new_equipment_category_power_supply_path(e),class: "btn btn-default" do %>
+                <%= e.name%>
+              <% end %>
 
 
 
