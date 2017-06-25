@@ -1,0 +1,2 @@
+module LightningRodsHelper
+end
