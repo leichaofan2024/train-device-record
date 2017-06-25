@@ -62,6 +62,10 @@
           <%= link_to new_equipment_category_trends_valve_controllable_path(e),class: "btn btn-default" do %>
             <%= e.name%>
           <% end %>
+        <% when "动态无功补偿装置--绝缘在线检测设备" %>
+          <%= link_to new_equipment_category_insulation_device_path(e),class: "btn btn-default" do %>
+            <%= e.name%>
+          <% end %>
         <% end %>
 
       </div>

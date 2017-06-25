@@ -34,6 +34,8 @@
       <%= render :partial => "trends_regulating_transformer_info", locals: { equipment_category: e} %>
     <% when "动态无功补偿装置--可控硅阀组" %>
       <%= render :partial => "trends_valve_controllable_info", locals: { equipment_category: e} %>
+    <% when "动态无功补偿装置--绝缘在线检测设备" %>
+      <%= render :partial => "insulation_device_info", locals: { equipment_category: e} %>
     <% end %>
 
   </div>
