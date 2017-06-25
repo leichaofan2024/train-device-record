@@ -20,6 +20,8 @@
       <%= render :partial => "potential_transformer_info", locals: { equipment_category: e} %>
     <% when "固定无功补偿装置--并联电容器" %>
       <%= render :partial => "shunt_capacitor_info", locals: { equipment_category: e} %>
+    <% when "固定无功补偿装置--电抗器" %>
+      <%= render :partial => "inductor_info", locals: { equipment_category: e} %>
     <% end %>
 
   </div>
