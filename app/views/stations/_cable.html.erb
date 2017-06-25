@@ -1,0 +1,31 @@
+<strong id= "equipmnet-detail-<%= equipment_category.id%>"> <%= equipment_category.name %>明细 </strong>
+<table class = "table table-bordered table-striped equipment-info">
+  <thead>
+    <tr>
+      <th>编号</th>
+      <th>规格型号</th>
+      <th>额定电压</th>
+      <th>长度</th>
+      <th>类型</th>
+      <th>出厂日期</th>
+      <th>投运日期</th>
+      <th>备注</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% n = 0%>
+    <% equipment_category.cables.where(station_id: @station.id).each do |t| %>
+
+      <tr>
+        <td> <%= n += 1%></td>
+        <td> <%= t.standard           %> </td>
+        <td> <%= t.rated_voltage      %> </td>
+        <td> <%= t.length             %> </td>
+        <td> <%= t.category           %> </td>
+        <td> <%= t.manufacture_date   %> </td>
+        <td> <%= t.commissioning_date %> </td>
+        <td> <%= t.remark             %> </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

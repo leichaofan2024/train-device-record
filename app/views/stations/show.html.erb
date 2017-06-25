@@ -28,6 +28,8 @@
       <%= render :partial => "discharging_device", locals:{equipment_category: e} %>
       <% when "母线" %>
       <%= render :partial => "busbar", locals:{equipment_category: e} %>
+      <% when "电缆" %>
+      <%= render :partial => "busbar", locals:{equipment_category: e} %>
 
 
 

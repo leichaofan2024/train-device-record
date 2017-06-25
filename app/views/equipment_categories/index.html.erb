@@ -46,10 +46,14 @@
                 <%= link_to new_equipment_category_discharging_device_path(e),class: "btn btn-default" do %>
                   <%= e.name%>
                 <% end %>
-                <% when "母线" %>
-                  <%= link_to new_equipment_category_busbar_path(e),class: "btn btn-default" do %>
-                    <%= e.name%>
-                  <% end %>
+              <% when "母线" %>
+                <%= link_to new_equipment_category_busbar_path(e),class: "btn btn-default" do %>
+                  <%= e.name%>
+                <% end %>
+              <% when "电缆" %>
+                <%= link_to new_equipment_category_busbar_path(e),class: "btn btn-default" do %>
+                  <%= e.name%>
+                <% end %>
 
 
 
