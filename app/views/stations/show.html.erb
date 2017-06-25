@@ -24,6 +24,8 @@
       <%= render :partial => "low_voltage_cabinet", locals:{equipment_category: e} %>
       <% when "GIS柜" %>
       <%= render :partial => "gis_cupboard", locals:{equipment_category: e} %>
+      <% when "放电装置" %>
+      <%= render :partial => "discharging_device", locals:{equipment_category: e} %>
 
 
 
