@@ -32,6 +32,8 @@
       <%= render :partial => "trends_discharge_coil_info", locals: { equipment_category: e} %>
     <% when "动态无功补偿装置--调压变压器" %>
       <%= render :partial => "trends_regulating_transformer_info", locals: { equipment_category: e} %>
+    <% when "动态无功补偿装置--可控硅阀组" %>
+      <%= render :partial => "trends_valve_controllable_info", locals: { equipment_category: e} %>
     <% end %>
 
   </div>

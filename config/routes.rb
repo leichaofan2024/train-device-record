@@ -38,7 +38,7 @@ Rails.application.routes.draw do
         resources :power_supplies
         resources :batteries
         resources :insulation_devices
-        resources :trends_controllable_valves
+        resources :trends_valve_controllables
         resources :trends_regulating_transformers
         resources :trends_discharge_coils
         resources :trends_inductors

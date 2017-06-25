@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170625082504) do
+ActiveRecord::Schema.define(version: 20170625093245) do
 
   create_table "apparatus_composites", force: :cascade do |t|
     t.integer  "station_id"
@@ -635,6 +635,23 @@ ActiveRecord::Schema.define(version: 20170625082504) do
     t.string   "rated_voltage"
     t.string   "rated_capacity"
     t.string   "rated_volume"
+    t.date     "manufacture_date"
+    t.date     "commissioning_date"
+    t.string   "remark"
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
+  end
+
+  create_table "trends_valve_controllables", force: :cascade do |t|
+    t.integer  "station_id"
+    t.integer  "equipment_category_id"
+    t.integer  "factory_id"
+    t.string   "running_number"
+    t.string   "standard"
+    t.string   "rated_voltage"
+    t.string   "rated_current"
+    t.string   "cooling_method"
+    t.string   "total_weight"
     t.date     "manufacture_date"
     t.date     "commissioning_date"
     t.string   "remark"

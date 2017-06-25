@@ -26,7 +26,7 @@ class Factory < ApplicationRecord
     has_many :power_supplies
     has_many :batteries
     has_many :insulation_devices
-    has_many :trends_controllable_valves
+    has_many :trends_valve_controllables
     has_many :trends_regulating_transformers
     has_many :trends_discharge_coils
     has_many :trends_inductors

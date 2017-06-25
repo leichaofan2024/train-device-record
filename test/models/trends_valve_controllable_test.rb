@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class TrendsControllableValveTest < ActiveSupport::TestCase
+class TrendsValveControllableTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end
