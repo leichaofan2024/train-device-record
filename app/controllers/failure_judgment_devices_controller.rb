@@ -42,8 +42,7 @@ class FailureJudgmentDevicesController < ApplicationController
             :equipment_category_id, #
             :factory_id, #
             :name, # 设备名称
-            :running_number,            # 运行编号
-            :standard,                  # 规格型号
+            :running_number, # 运行编号
             :standard, # 规格型号
             :number, # RTU数量
             :control_number, # 控制群数量
