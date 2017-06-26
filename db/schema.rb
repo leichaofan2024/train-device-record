@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170625103405) do
+ActiveRecord::Schema.define(version: 20170626041158) do
 
   create_table "apparatus_composites", force: :cascade do |t|
     t.integer  "station_id"
@@ -671,8 +671,11 @@ ActiveRecord::Schema.define(version: 20170625103405) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string   "email",                  default: "", null: false
+    t.string   "id_card",                default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
+    t.string   "name",                   default: "", null: false
+    t.string   "job_number",             default: "", null: false
+    t.integer  "station_id"
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
@@ -683,8 +686,9 @@ ActiveRecord::Schema.define(version: 20170625103405) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
-    t.integer  "station_id"
-    t.index ["email"], name: "index_users_on_email", unique: true
+    t.string   "email",                  default: ""
+    t.index ["id_card"], name: "index_users_on_id_card", unique: true
+    t.index ["job_number"], name: "index_users_on_job_number", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 

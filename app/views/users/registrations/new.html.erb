@@ -4,11 +4,14 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
-    <%= f.input :email, required: true, autofocus: true %>
+    <%= f.input :name,required: true ,label: "姓名", autofocus: true  %>
+    <%= f.input :id_card,required: true, label: "请输入身份证号" %>
+    <%= f.input :job_number,required: true,  label: "请输入工号" %>
     <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
     <%= f.input :password_confirmation, required: true %>
+
     <%= f.association :station, label: "所属机构" %>
-    
+
   </div>
 
   <div class="form-actions">

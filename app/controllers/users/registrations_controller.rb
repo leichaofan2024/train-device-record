@@ -40,7 +40,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
 
   def sign_up_params
-    params.require(:user).permit(:email, :password,:password_confirmation,:station_id)
+    params.require(:user).permit(:id_card,:job_number,:name, :password,:password_confirmation,:station_id)
   end
   # If you have extra params to permit, append them to the sanitizer.
   # def configure_sign_up_params
