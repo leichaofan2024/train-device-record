@@ -16,6 +16,12 @@ class Users::SessionsController < Devise::SessionsController
   #   super
   # end
 
+  protected
+
+
+  def configure_sign_in_params
+    params.require(:user).permit(:id_card,:job_number,:name)
+  end
   # protected
 
   # If you have extra params to permit, append them to the sanitizer.

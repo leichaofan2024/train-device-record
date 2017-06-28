@@ -43,8 +43,9 @@ class StationsController < ApplicationController
   end
 
 
-
-
+  def station_users
+    @users = User.all.where(:station_id => current_station.id)
+  end 
 
   private
 
