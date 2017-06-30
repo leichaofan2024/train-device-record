@@ -1,0 +1,2 @@
+module Equipments::TrendsRegulatingTransformersHelper
+end

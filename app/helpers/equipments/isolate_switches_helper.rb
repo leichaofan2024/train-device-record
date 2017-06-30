@@ -1,0 +1,2 @@
+module Equipments::IsolateSwitchesHelper
+end

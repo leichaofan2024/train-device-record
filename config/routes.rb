@@ -22,13 +22,13 @@ Rails.application.routes.draw do
 
     resources :factories
     resources :equipment_categories do
+      namespace :equipments do
         resources :circuit_breakers
         resources :isolate_switches
         resources :load_switches
         resources :apparatus_composites
         resources :current_transformers
         resources :potential_transformers
-
         resources :lightning_rods
         resources :ray_resistance_rings
         resources :cable_ones
@@ -40,8 +40,6 @@ Rails.application.routes.draw do
         resources :failure_judgment_devices
         resources :remote_action_systems
         resources :v_stop_systems
-        resources :terminal_boxes
-        resources :video_monitoring_systems
         resources :other_tran_equipments
         resources :surge_arresters
         resources :power_supplies
@@ -55,7 +53,6 @@ Rails.application.routes.draw do
         resources :discharge_coils
         resources :inductors
         resources :shunt_capacitors
-        resources :other_tran_equipments
         resources :video_monitoring_systems
         resources :terminal_boxes
         resources :transformers do
@@ -64,9 +61,12 @@ Rails.application.routes.draw do
             resources :transformer_shift_records
             resources :move_records
         end
-        collection do
-            get :admin_index
-        end
-
+      end
+      collection do
+          get :admin_index
+      end
     end
+
+
+
 end

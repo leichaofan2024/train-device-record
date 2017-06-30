@@ -1,4 +1,4 @@
-class PotentialTransformersController < ApplicationController
+class Equipments::PotentialTransformersController < ApplicationController
   def index
     @station = Station.find(params[:station_id])
     @potential_transformers = PotentialTransformer.all.where(station_id: params[:station_id],equipment_category_id: params[:equipment_category_id])
@@ -33,7 +33,7 @@ class PotentialTransformersController < ApplicationController
     @equipment_category = EquipmentCategory.find(params[:equipment_category_id])
     @potential_transformer = PotentialTransformer.find(params[:id])
     @potential_transformer.update(potential_transformer_params)
-    redirect_to equipment_category_potential_transformer_path(@equipment_category,@potential_transformer)
+    redirect_to equipment_category_equipmnets_potential_transformer_path(@equipment_category,@potential_transformer)
   end
 
   private

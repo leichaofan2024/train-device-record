@@ -1,4 +1,4 @@
-class LoadSwitchesController < ApplicationController
+class Equipments::LoadSwitchesController < ApplicationController
   def index
     @station = Station.find(params[:station_id])
     @load_switches = LoadSwitch.all.where(station_id: params[:station_id],equipment_category_id: params[:equipment_category_id])
@@ -33,7 +33,7 @@ class LoadSwitchesController < ApplicationController
     @equipment_category = EquipmentCategory.find(params[:equipment_category_id])
     @load_switch = LoadSwitch.find(params[:id])
     @load_switch.update(load_switch_params)
-    redirect_to equipment_category_load_switch_path(@equipment_category,@load_switch)
+    redirect_to equipment_category_equipmnets_load_switch_path(@equipment_category,@load_switch)
   end
 
   private
@@ -49,7 +49,7 @@ class LoadSwitchesController < ApplicationController
                                           :rated_current,             #额定电流
                                           :orgnization_model,                    #状态
                                           :manufacture_date,          #出厂日期
-                                          :manufacture_number,  
+                                          :manufacture_number,
                                           :commissioning_date,        #投运日期
                                           :remark,                    #备注
 )

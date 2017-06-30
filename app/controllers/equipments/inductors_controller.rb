@@ -1,4 +1,4 @@
-class InductorsController < ApplicationController
+class Equipments::InductorsController < ApplicationController
   def index
     @station = Station.find(params[:station_id])
     @inductors = Inductor.all.where(station_id: params[:station_id],equipment_category_id: params[:equipment_category_id])
@@ -33,7 +33,7 @@ class InductorsController < ApplicationController
     @equipment_category = EquipmentCategory.find(params[:equipment_category_id])
     @inductor = Inductor.find(params[:id])
     @inductor.update(inductor_params)
-    redirect_to equipment_category_inductor_path(@equipment_category,@inductor)
+    redirect_to equipment_category_equipmnets_inductor_path(@equipment_category,@inductor)
   end
 
   private

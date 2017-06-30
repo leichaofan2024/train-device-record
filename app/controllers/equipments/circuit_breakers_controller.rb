@@ -1,4 +1,4 @@
-class CircuitBreakersController < ApplicationController
+class Equipments::CircuitBreakersController < ApplicationController
   def index
     @station = Station.find(params[:station_id])
     @circuit_breakers = CircuitBreaker.all.where(station_id: params[:station_id],equipment_category_id: params[:equipment_category_id])
@@ -33,7 +33,7 @@ class CircuitBreakersController < ApplicationController
     @equipment_category = EquipmentCategory.find(params[:equipment_category_id])
     @circuit_breaker = CircuitBreaker.find(params[:id])
     @circuit_breaker.update(circuit_breaker_params)
-    redirect_to equipment_category_circuit_breaker_path(@equipment_category,@circuit_breaker)
+    redirect_to equipment_category_equipmnets_circuit_breaker_path(@equipment_category,@circuit_breaker)
   end
 
   private

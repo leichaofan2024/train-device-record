@@ -3,136 +3,136 @@
       <div class="category-item">
         <% case e.name %>
         <% when "变压器" %>
-          <%= link_to new_equipment_category_transformer_path(e),class: "btn btn-default" do %>
+          <%= link_to new_equipment_category_equipments_transformer_path(e),class: "btn btn-default" do %>
             <%= e.name%>
           <% end %>
         <% when "断路器" %>
-          <%= link_to new_equipment_category_circuit_breaker_path(e),class: "btn btn-default" do %>
+          <%= link_to new_equipment_category_equipments_circuit_breaker_path(e),class: "btn btn-default" do %>
             <%= e.name%>
           <% end %>
         <% when "隔离开关" %>
-          <%= link_to new_equipment_category_isolate_switch_path(e),class: "btn btn-default" do %>
+          <%= link_to new_equipment_category_equipments_isolate_switch_path(e),class: "btn btn-default" do %>
             <%= e.name%>
           <% end %>
         <% when "负荷开关" %>
-          <%= link_to new_equipment_category_load_switch_path(e),class: "btn btn-default" do %>
+          <%= link_to new_equipment_category_equipments_load_switch_path(e),class: "btn btn-default" do %>
             <%= e.name%>
           <% end %>
         <% when "组合电器（箱变）" %>
-          <%= link_to new_equipment_category_apparatus_composite_path(e),class: "btn btn-default" do %>
+          <%= link_to new_equipment_category_equipments_apparatus_composite_path(e),class: "btn btn-default" do %>
             <%= e.name%>
           <% end %>
         <% when "电流互感器" %>
-          <%= link_to new_equipment_category_current_transformer_path(e),class: "btn btn-default" do %>
+          <%= link_to new_equipment_category_equipments_current_transformer_path(e),class: "btn btn-default" do %>
             <%= e.name%>
           <% end %>
         <% when "电压互感器" %>
-          <%= link_to new_equipment_category_potential_transformer_path(e),class: "btn btn-default" do %>
+          <%= link_to new_equipment_category_equipments_potential_transformer_path(e),class: "btn btn-default" do %>
             <%= e.name%>
           <% end %>
         <% when "固定无功补偿装置--并联电容器" %>
-          <%= link_to new_equipment_category_shunt_capacitor_path(e),class: "btn btn-default" do %>
+          <%= link_to new_equipment_category_equipments_shunt_capacitor_path(e),class: "btn btn-default" do %>
             <%= e.name%>
           <% end %>
         <% when "固定无功补偿装置--电抗器" %>
-          <%= link_to new_equipment_category_inductor_path(e),class: "btn btn-default" do %>
+          <%= link_to new_equipment_category_equipments_inductor_path(e),class: "btn btn-default" do %>
             <%= e.name%>
           <% end %>
         <% when "固定无功补偿装置--放电线圈（电感器）" %>
-          <%= link_to new_equipment_category_discharge_coil_path(e),class: "btn btn-default" do %>
+          <%= link_to new_equipment_category_equipments_discharge_coil_path(e),class: "btn btn-default" do %>
             <%= e.name%>
           <% end %>
         <% when "动态无功补偿装置--并联电容器" %>
-          <%= link_to new_equipment_category_trends_shunt_capacitor_path(e),class: "btn btn-default" do %>
+          <%= link_to new_equipment_category_equipments_trends_shunt_capacitor_path(e),class: "btn btn-default" do %>
             <%= e.name%>
           <% end %>
         <% when "动态无功补偿装置--电抗器" %>
-          <%= link_to new_equipment_category_trends_inductor_path(e),class: "btn btn-default" do %>
+          <%= link_to new_equipment_category_equipments_trends_inductor_path(e),class: "btn btn-default" do %>
             <%= e.name%>
           <% end %>
         <% when "动态无功补偿装置--放电线圈（电感器）" %>
-          <%= link_to new_equipment_category_trends_discharge_coil_path(e),class: "btn btn-default" do %>
+          <%= link_to new_equipment_category_equipments_trends_discharge_coil_path(e),class: "btn btn-default" do %>
             <%= e.name%>
           <% end %>
         <% when "动态无功补偿装置--调压变压器" %>
-          <%= link_to new_equipment_category_trends_regulating_transformer_path(e),class: "btn btn-default" do %>
+          <%= link_to new_equipment_category_equipments_trends_regulating_transformer_path(e),class: "btn btn-default" do %>
             <%= e.name%>
           <% end %>
         <% when "动态无功补偿装置--可控硅阀组" %>
-          <%= link_to new_equipment_category_trends_valve_controllable_path(e),class: "btn btn-default" do %>
+          <%= link_to new_equipment_category_equipments_trends_valve_controllable_path(e),class: "btn btn-default" do %>
             <%= e.name%>
           <% end %>
         <% when "动态无功补偿装置--绝缘在线检测设备" %>
-          <%= link_to new_equipment_category_insulation_device_path(e),class: "btn btn-default" do %>
+          <%= link_to new_equipment_category_equipments_insulation_device_path(e),class: "btn btn-default" do %>
             <%= e.name%>
           <% end %>
 
         <% when "视频监控系统" %>
-          <%= link_to new_equipment_category_video_monitoring_system_path(e),class: "btn btn-default" do %>
+          <%= link_to new_equipment_category_equipments_video_monitoring_system_path(e),class: "btn btn-default" do %>
             <%= e.name%>
           <% end %>
-        <% when "其他变电设备" %>
-          <%= link_to new_equipment_category_other_tran_equipment_path(e),class: "btn btn-default" do %>
+        <% when "其它变电设备" %>
+          <%= link_to new_equipment_category_equipments_other_tran_equipment_path(e),class: "btn btn-default" do %>
             <%= e.name%>
           <% end %>
         <% when "端子箱" %>
-          <%= link_to new_equipment_category_terminal_box_path(e),class: "btn btn-default" do %>
+          <%= link_to new_equipment_category_equipments_terminal_box_path(e),class: "btn btn-default" do %>
             <%= e.name%>
           <% end %>
         <% when "V停系统" %>
-          <%= link_to new_equipment_category_v_stop_system_path(e),class: "btn btn-default" do %>
+          <%= link_to new_equipment_category_equipments_v_stop_system_path(e),class: "btn btn-default" do %>
             <%= e.name%>
           <% end %>
         <% when "远动系统" %>
-          <%= link_to new_equipment_category_remote_action_system_path(e),class: "btn btn-default" do %>
+          <%= link_to new_equipment_category_equipments_remote_action_system_path(e),class: "btn btn-default" do %>
             <%= e.name%>
           <% end %>
         <% when "故障判断装置" %>
-          <%= link_to new_equipment_category_failure_judgment_device_path(e),class: "btn btn-default" do %>
+          <%= link_to new_equipment_category_equipments_failure_judgment_device_path(e),class: "btn btn-default" do %>
             <%= e.name%>
           <% end %>
         <% when "综合自动化系统" %>
-          <%= link_to new_equipment_category_integrated_automation_system_path(e),class: "btn btn-default" do %>
+          <%= link_to new_equipment_category_equipments_integrated_automation_system_path(e),class: "btn btn-default" do %>
             <%= e.name%>
           <% end %>
-        <% when "低压盘-柜" %>
-          <%= link_to new_equipment_category_low_voltage_cabinet_path(e),class: "btn btn-default" do %>
+        <% when "低压盘（柜）" %>
+          <%= link_to new_equipment_category_equipments_low_voltage_cabinet_path(e),class: "btn btn-default" do %>
             <%= e.name%>
           <% end %>
         <% when "GIS柜" %>
-          <%= link_to new_equipment_category_gis_cupboard_path(e),class: "btn btn-default" do %>
+          <%= link_to new_equipment_category_equipments_gis_cupboard_path(e),class: "btn btn-default" do %>
             <%= e.name%>
           <% end %>
         <% when "放电装置" %>
-          <%= link_to new_equipment_category_discharging_device_path(e),class: "btn btn-default" do %>
+          <%= link_to new_equipment_category_equipments_discharging_device_path(e),class: "btn btn-default" do %>
             <%= e.name%>
           <% end %>
         <% when "母线" %>
-          <%= link_to new_equipment_category_busbar_path(e),class: "btn btn-default" do %>
+          <%= link_to new_equipment_category_equipments_busbar_path(e),class: "btn btn-default" do %>
             <%= e.name%>
           <% end %>
         <% when "电缆" %>
-          <%= link_to new_equipment_category_busbar_path(e),class: "btn btn-default" do %>
+          <%= link_to new_equipment_category_equipments_busbar_path(e),class: "btn btn-default" do %>
             <%= e.name%>
           <% end %>
         <% when "抗雷圈" %>
-          <%= link_to new_equipment_category_ray_resistance_ring_path(e),class: "btn btn-default" do %>
+          <%= link_to new_equipment_category_equipments_ray_resistance_ring_path(e),class: "btn btn-default" do %>
             <%= e.name%>
           <% end %>
         <% when "避雷针" %>
-          <%= link_to new_equipment_category_lightning_rod_path(e),class: "btn btn-default" do %>
+          <%= link_to new_equipment_category_equipments_lightning_rod_path(e),class: "btn btn-default" do %>
             <%= e.name%>
           <% end %>
         <% when "避雷器" %>
-          <%= link_to new_equipment_category_surge_arrester_path(e),class: "btn btn-default" do %>
+          <%= link_to new_equipment_category_equipments_surge_arrester_path(e),class: "btn btn-default" do %>
             <%= e.name%>
           <% end %>
-        <% when "直流电源装置-直流电源" %>
-          <%= link_to new_equipment_category_power_supply_path(e),class: "btn btn-default" do %>
+        <% when "直流电源装置--直流电源" %>
+          <%= link_to new_equipment_category_equipments_power_supply_path(e),class: "btn btn-default" do %>
             <%= e.name%>
           <% end %>
-        <% when "直流电源装置-蓄电池" %>
-          <%= link_to new_equipment_category_battery_path(e),class: "btn btn-default" do %>
+        <% when "直流电源装置--蓄电池" %>
+          <%= link_to new_equipment_category_equipments_battery_path(e),class: "btn btn-default" do %>
             <%= e.name%>
           <% end %>
 

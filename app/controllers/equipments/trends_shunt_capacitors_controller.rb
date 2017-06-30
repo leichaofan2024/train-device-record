@@ -1,4 +1,4 @@
-class TrendsShuntCapacitorsController < ApplicationController
+class Equipments::TrendsShuntCapacitorsController < ApplicationController
   def index
     @station = Station.find(params[:station_id])
     @trends_shunt_capacitors = TrendsShuntCapacitor.all.where(station_id: params[:station_id],equipment_category_id: params[:equipment_category_id])
@@ -33,7 +33,7 @@ class TrendsShuntCapacitorsController < ApplicationController
     @equipment_category = EquipmentCategory.find(params[:equipment_category_id])
     @trends_shunt_capacitor = TrendsShuntCapacitor.find(params[:id])
     @trends_shunt_capacitor.update(trends_shunt_capacitor_params)
-    redirect_to equipment_category_trends_shunt_capacitor_path(@equipment_category,@trends_shunt_capacitor)
+    redirect_to equipment_category_equipmnets_trends_shunt_capacitor_path(@equipment_category,@trends_shunt_capacitor)
   end
 
   private

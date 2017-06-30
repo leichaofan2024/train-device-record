@@ -12,7 +12,7 @@ class MaintenanceRecordsController < ApplicationController
     @maintenance_record = MaintenanceRecord.new(maintenance_record_params)
     @maintenance_record.transformer = @transformer
     if @maintenance_record.save
-      redirect_to equipment_category_transformer_path(@equipment_category,@transformer)
+      redirect_to equipment_category_equipmnets_transformer_path(@equipment_category,@transformer)
     else
       render :new
     end

@@ -11,7 +11,7 @@ class QuanlityAuthanticateRecordsController < ApplicationController
     @quanlity_authanticate_record = QuanlityAuthanticateRecord.new(quanlity_authanticate_record_params)
     @quanlity_authanticate_record.transformer = @transformer
     if @quanlity_authanticate_record.save
-      redirect_to equipment_category_transformer_path(@equipment_category,@transformer)
+      redirect_to equipment_category_equipmnets_transformer_path(@equipment_category,@transformer)
     else
       render :new
     end

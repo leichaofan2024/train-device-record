@@ -1,5 +1,4 @@
-class TrendsValveControllablesController < ApplicationController
-
+class Equipments::TrendsValveControllablesController < ApplicationController
   def index
    @station = Station.find(params[:station_id])
    @trends_valve_controllables = TrendsValveControllable.all.where(station_id: params[:station_id],equipment_category_id: params[:equipment_category_id])
@@ -34,7 +33,7 @@ class TrendsValveControllablesController < ApplicationController
    @equipment_category = EquipmentCategory.find(params[:equipment_category_id])
    @trends_valve_controllable = TrendsValveControllable.find(params[:id])
    @trends_valve_controllable.update(trends_valve_controllable_params)
-   redirect_to equipment_category_trends_valve_controllable_path(@equipment_category,@trends_valve_controllable)
+   redirect_to equipment_category_equipmnets_trends_valve_controllable_path(@equipment_category,@trends_valve_controllable)
   end
 
   private

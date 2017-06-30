@@ -1,4 +1,4 @@
-class VStopSystemsController < ApplicationController
+class Equipments::VStopSystemsController < ApplicationController
   def index
       @station = Station.find(params[:station_id])
       @v_stop_systems = VStopSystem.all.where(station_id: params[:station_id], equipment_category_id: params[:equipment_category_id])
@@ -31,7 +31,7 @@ class VStopSystemsController < ApplicationController
       @equipment_category = EquipmentCategory.find(params[:equipment_category_id])
       @v_stop_system = VStopSystem.find(params[:id])
       @v_stop_system.update(v_stop_system_params)
-      redirect_to equipment_category_v_stop_system_path(@equipment_category, @v_stop_system)
+      redirect_to equipment_category_equipmnets_v_stop_system_path(@equipment_category, @v_stop_system)
   end
 
   private

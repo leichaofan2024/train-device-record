@@ -1,4 +1,4 @@
-class TrendsDischargeCoilsController < ApplicationController
+class Equipments::TrendsDischargeCoilsController < ApplicationController
   def index
     @station = Station.find(params[:station_id])
     @trends_discharge_coils = TrendsDischargeCoil.all.where(station_id: params[:station_id],equipment_category_id: params[:equipment_category_id])
@@ -33,7 +33,7 @@ class TrendsDischargeCoilsController < ApplicationController
     @equipment_category = EquipmentCategory.find(params[:equipment_category_id])
     @trends_discharge_coil = TrendsDischargeCoil.find(params[:id])
     @trends_discharge_coil.update(trends_discharge_coil_params)
-    redirect_to equipment_category_trends_discharge_coil_path(@equipment_category,@trends_discharge_coil)
+    redirect_to equipment_category_equipmnets_trends_discharge_coil_path(@equipment_category,@trends_discharge_coil)
   end
 
   private

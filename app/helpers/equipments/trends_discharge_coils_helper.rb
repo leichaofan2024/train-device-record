@@ -1,0 +1,2 @@
+module Equipments::TrendsDischargeCoilsHelper
+end

@@ -1,0 +1,2 @@
+module Equipments::CurrentTransformersHelper
+end

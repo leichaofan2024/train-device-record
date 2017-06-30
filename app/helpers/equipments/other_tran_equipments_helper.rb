@@ -1,0 +1,2 @@
+module Equipments::OtherTranEquipmentsHelper
+end

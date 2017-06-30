@@ -1,0 +1,2 @@
+module Equipments::TerminalBoxesHelper
+end

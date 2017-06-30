@@ -1,0 +1,2 @@
+module Equipments::DischargeCoilsHelper
+end

@@ -1,4 +1,4 @@
-class ApparatusCompositesController < ApplicationController
+class Equipments::ApparatusCompositesController < ApplicationController
   def index
     @station = Station.find(params[:station_id])
     @apparatus_composites = ApparatusComposite.all.where(station_id: params[:station_id],equipment_category_id: params[:equipment_category_id])
@@ -33,7 +33,7 @@ class ApparatusCompositesController < ApplicationController
     @equipment_category = EquipmentCategory.find(params[:equipment_category_id])
     @apparatus_composite = ApparatusComposite.find(params[:id])
     @apparatus_composite.update(apparatus_composite_params)
-    redirect_to equipment_category_apparatus_composite_path(@equipment_category,@apparatus_composite)
+    redirect_to equipment_category_equipmnets_apparatus_composite_path(@equipment_category,@apparatus_composite)
   end
 
   private

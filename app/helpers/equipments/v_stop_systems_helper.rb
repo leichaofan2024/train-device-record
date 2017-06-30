@@ -1,0 +1,2 @@
+module Equipments::VStopSystemsHelper
+end

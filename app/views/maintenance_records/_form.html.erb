@@ -1,6 +1,6 @@
 
 
-<%= simple_form_for [@equipment_category,@transformer,@maintenance_record] do |f| %>
+<%= simple_form_for [@equipment_category,:equipments,@transformer,@maintenance_record] do |f| %>
   <%= f.input :date %>
   <%= f.input :maintenance_process %>
   <%= f.input :maintenance_unit %>

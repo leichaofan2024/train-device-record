@@ -1,4 +1,4 @@
-class IsolateSwitchesController < ApplicationController
+class Equipments::IsolateSwitchesController < ApplicationController
   def index
     @station = Station.find(params[:station_id])
     @isolate_switches = IsolateSwitch.all.where(station_id: params[:station_id],equipment_category_id: params[:equipment_category_id])
@@ -33,7 +33,7 @@ class IsolateSwitchesController < ApplicationController
     @equipment_category = EquipmentCategory.find(params[:equipment_category_id])
     @isolate_switch = IsolateSwitch.find(params[:id])
     @isolate_switch.update(isolate_switch_params)
-    redirect_to equipment_category_isolate_switch_path(@equipment_category,@isolate_switch)
+    redirect_to equipment_category_equipmnets_isolate_switch_path(@equipment_category,@isolate_switch)
   end
 
   private

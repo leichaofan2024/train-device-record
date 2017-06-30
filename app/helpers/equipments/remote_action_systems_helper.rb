@@ -1,0 +1,2 @@
+module Equipments::RemoteActionSystemsHelper
+end

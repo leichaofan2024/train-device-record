@@ -1,12 +1,11 @@
-<%= simple_form_for [@equipment_category, @transformer, @transformer_shift_record] do |f| %>
+<%= simple_form_for [@equipment_category,:equipments, @transformer, @transformer_shift_record] do |f| %>
   <%= f.input :shift_in_date %>
   <%= f.input :shift_reason %>
-  <%= f.input :shift_out_company%>
+  <%= f.input :shift_out_company %>
   <%= f.input :shift_out_agent %>
   <%= f.input :reciving_company %>
   <%= f.input :shift_in_agent %>
   <%= f.input :commissioning_date %>
-  <%= f.input :breakdown_record %>
-
+  <%= f.input :breakdown_record%>
   <%= f.submit "提交", data: {disable_with: "提交中... "} %>
 <% end %>

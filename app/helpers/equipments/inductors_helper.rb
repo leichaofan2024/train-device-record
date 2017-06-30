@@ -1,0 +1,2 @@
+module Equipments::InductorsHelper
+end

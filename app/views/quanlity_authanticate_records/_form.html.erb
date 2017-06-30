@@ -1,6 +1,7 @@
-<%= simple_form_for [@equipment_category, @transformer, @quanlity_authanticate_record] do |f| %>
+<%= simple_form_for [@equipment_category,:equipments, @transformer, @quanlity_authanticate_record] do |f| %>
   <%= f.input :year %>
   <%= f.input :grade %>
-  <%= f.input :major_defects%>
+  <%= f.input :major_defects %>
+
   <%= f.submit "提交", data: {disable_with: "提交中... "} %>
 <% end %>

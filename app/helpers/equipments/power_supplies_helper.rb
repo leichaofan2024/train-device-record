@@ -1,0 +1,2 @@
+module Equipments::PowerSuppliesHelper
+end

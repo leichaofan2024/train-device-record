@@ -1,0 +1,14 @@
+<%= simple_form_for [@equipment_category,:equipments,@shunt_capacitor] do |f| %>
+  <%= f.select :station_id ,[[current_station.name ,current_station.id]] %>
+  <%= f.select :factory_id , Factory.all.map{|u| [u.name ,u.id]} %>
+  <%= f.input :running_number%>
+  <%= f.input :standard %>
+  <%= f.input :count   %>
+  <%= f.input :rated_voltage %>
+  <%= f.input :rated_capacity %>
+  <%= f.input :rated_current %>
+  <%= f.input :manufacture_date %>
+  <%= f.input :commissioning_date  %>
+  <%= f.input :remark   %>
+  <%= f.submit "提交" , data: {disable_with: "提交中..."}%>
+<% end %>
