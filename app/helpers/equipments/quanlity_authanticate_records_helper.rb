@@ -1,0 +1,2 @@
+module Equipments::QuanlityAuthanticateRecordsHelper
+end

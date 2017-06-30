@@ -1,4 +1,4 @@
-class QuanlityAuthanticateRecordsController < ApplicationController
+class Equipments::QuanlityAuthanticateRecordsController < ApplicationController
   def new
     @equipment_category = EquipmentCategory.find(params[:equipment_category_id])
     @transformer = Transformer.find(params[:transformer_id])
@@ -11,7 +11,7 @@ class QuanlityAuthanticateRecordsController < ApplicationController
     @quanlity_authanticate_record = QuanlityAuthanticateRecord.new(quanlity_authanticate_record_params)
     @quanlity_authanticate_record.transformer = @transformer
     if @quanlity_authanticate_record.save
-      redirect_to equipment_category_equipmnets_transformer_path(@equipment_category,@transformer)
+      redirect_to equipment_category_equipments_transformer_path(@equipment_category,@transformer)
     else
       render :new
     end
@@ -27,5 +27,4 @@ class QuanlityAuthanticateRecordsController < ApplicationController
   def quanlity_authanticate_record_params
     params.require(:quanlity_authanticate_record).permit(:transformer_id,:year,:grade,:major_defects)
   end
-
 end

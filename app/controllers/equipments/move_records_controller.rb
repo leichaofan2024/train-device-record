@@ -1,5 +1,4 @@
-class MoveRecordsController < ApplicationController
-
+class Equipments::MoveRecordsController < ApplicationController
   def new
     @equipment_category = EquipmentCategory.find(params[:equipment_category_id])
     @transformer = Transformer.find(params[:transformer_id])
@@ -12,7 +11,7 @@ class MoveRecordsController < ApplicationController
     @move_record = MoveRecord.new(move_record_params)
     @move_record.transformer = @transformer
     if @move_record.save
-      redirect_to equipment_category_equipmnets_transformer_path(@equipment_category,@transformer)
+      redirect_to equipment_category_equipments_transformer_path(@equipment_category,@transformer)
     else
       render :new
     end
