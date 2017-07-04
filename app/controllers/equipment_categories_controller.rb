@@ -1,5 +1,5 @@
 class EquipmentCategoriesController < ApplicationController
-
+  before_action :require_is_admin, only: [:admin_index,:edit,:update,:new,:create]
   def admin_index
     @equipment_categories = EquipmentCategory.all
   end

