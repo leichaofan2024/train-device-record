@@ -44,8 +44,27 @@ class StationsController < ApplicationController
 
 
   def station_users
-    @users = User.all.where(:station_id => current_station.id)
-  end 
+    @station = Station.find(params[:id])
+    @users = @station.users
+  end
+
+  def set_as_admin
+    @user = User.find(params[:user_id])
+    if @user.is_admin?
+      @user.not_admin!
+      flash[:warning] = "已取消用户#{@user.name}的管理员资格！"
+    else
+      @user.admin!
+      flash[:notice]  = "已成功把用户#{@user.name}设为管理员！"
+    end
+    redirect_to :back
+  end
+
+  def delete_user
+    @user = User.find(params[:user_id])
+    @user.destroy
+    redirect_to :back
+  end
 
   private
 

@@ -1,19 +1,15 @@
 Rails.application.routes.draw do
+
     # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
     devise_for :users, controllers: { registrations: 'users/registrations' , sessions: 'users/sessions'}
 
     root 'welcome#index'
 
-    namespace :users do
-      resources :users
-    end
-
     resources :stations do
         member do
           get :station_users
-        end
-        collection do
-            post :category_new
+          delete :delete_user
+          post :set_as_admin
         end
     end
 

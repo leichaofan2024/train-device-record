@@ -5,4 +5,15 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable
 
   belongs_to :station
+
+  def admin!
+    self.is_admin = true
+    self.save
+  end
+
+  def not_admin!
+    self.is_admin = false
+    self.save
+  end
+
 end

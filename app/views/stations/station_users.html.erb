@@ -1,7 +1,30 @@
 <div class="">
-  <% @users.each do |u| %>
-    <%= u.name %>
-    <%= u.job_number %>
-    <%= u.id_card%>
-  <% end %>
+
+  <table class="table ">
+    <thead>
+      <tr>
+        <th>是否管理员</th>
+        <th>用户名</th>
+        <th>工号</th>
+        <th>身份证号</th>
+        <th>删除用户</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @users.each do |u| %>
+      <tr>
+        <td>
+          <%= link_to set_as_admin_station_path(current_station,user_id: u.id),method: :post  do %>
+            <%= render_user_status(u) %>
+          <% end %>
+        </td>
+        <td><%= u.name %></td>
+        <td><%= u.job_number %></td>
+        <td><%= u.id_card%></td>
+        <td><%= link_to(content_tag(:i, "", class:"fa fa-trash"),delete_user_station_path(user_id: u.id),method: :delete,data: {confirm: "确定删除吗？"})%></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+
 </div>
