@@ -17,7 +17,7 @@ class Equipments::LowVoltageCabinetsController < ApplicationController
   def create
       @low_voltage_cabinet = LowVoltageCabinet.new(low_voltage_cabinet_params)
       @equipment_category = EquipmentCategory.find(params[:equipment_category_id])
-
+      @low_voltage_cabinet.station = current_station
       @low_voltage_cabinet.equipment_category_id = @equipment_category.id
       redirect_to station_path(current_station) if @low_voltage_cabinet.save
   end

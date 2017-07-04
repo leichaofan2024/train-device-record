@@ -17,7 +17,7 @@ class Equipments::ShuntCapacitorsController < ApplicationController
   def create
     @shunt_capacitor = ShuntCapacitor.new(shunt_capacitor_params)
     @equipment_category = EquipmentCategory.find(params[:equipment_category_id])
-
+    @shunt_capacitor.station = current_station
     @shunt_capacitor.equipment_category_id = @equipment_category.id
     if @shunt_capacitor.save
       redirect_to station_path(current_station)

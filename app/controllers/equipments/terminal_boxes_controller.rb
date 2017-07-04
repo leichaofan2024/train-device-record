@@ -17,7 +17,7 @@ class Equipments::TerminalBoxesController < ApplicationController
   def create
       @terminal_box = TerminalBox.new(terminal_box_params)
       @equipment_category = EquipmentCategory.find(params[:equipment_category_id])
-
+      @terminal_box.station = current_station
       @terminal_box.equipment_category_id = @equipment_category.id
       redirect_to station_path(current_station) if @terminal_box.save
   end

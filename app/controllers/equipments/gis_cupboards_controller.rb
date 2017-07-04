@@ -17,7 +17,7 @@ class Equipments::GisCupboardsController < ApplicationController
   def create
       @gis_cupboard = GisCupboard.new(gis_cupboard_params)
       @equipment_category = EquipmentCategory.find(params[:equipment_category_id])
-
+      @gis_cupboard.station = current_station
       @gis_cupboard.equipment_category_id = @equipment_category.id
       redirect_to station_path(current_station) if @gis_cupboard.save
   end

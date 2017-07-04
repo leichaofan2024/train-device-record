@@ -17,7 +17,7 @@ class Equipments::TrendsDischargeCoilsController < ApplicationController
   def create
     @trends_discharge_coil = TrendsDischargeCoil.new(trends_discharge_coil_params)
     @equipment_category = EquipmentCategory.find(params[:equipment_category_id])
-
+    @trends_discharge_coil.station = current_station
     @trends_discharge_coil.equipment_category_id = @equipment_category.id
     if @trends_discharge_coil.save
       redirect_to station_path(current_station)

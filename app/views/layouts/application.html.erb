@@ -17,15 +17,22 @@
           <div class="side-bar-categoy">
 
             <% current_station.equipment_categories.all.each do |e| %>
+              <% if url_for != "/stations/#{current_station.id}"  %>
 
-               <a href="#equipment-detail-<%= e.id%>"><%= e.name %></a>
+            <!-- 还可以这样写：  <%  url_for != station_path(current_user)  %>  -->
+                <a href="/stations/<%= current_station.id%>" ><%= e.name %></a>
+              <% else %>
+                <a href="#equipment-detail-<%= e.id%>"><%= e.name%></a>
+              <% end %>
             <% end %>
           </div>
           <hr>
           <div class="side-bar-option">
             <a href="/equipment_categories">设备管理</a>
-            <a href="/equipment_categories/admin_index">添加设备库</a>
-            <a href="/stations/<%= current_station.id%>"> 返回</a>
+            <% if current_user.is_admin? %>
+              <a href="/equipment_categories/admin_index">添加设备库</a>
+            <% end %>
+            <a href="/stations/<%= current_station.id%>"> 回到首页</a>
           </div>
         <% end %>
       </div>

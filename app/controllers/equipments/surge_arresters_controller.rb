@@ -17,7 +17,7 @@ class Equipments::SurgeArrestersController < ApplicationController
   def create
       @surge_arrester = SurgeArrester.new(surge_arrester_params)
       @equipment_category = EquipmentCategory.find(params[:equipment_category_id])
-
+      @surge_arrester.station = current_station
       @surge_arrester.equipment_category_id = @equipment_category.id
       redirect_to station_path(current_station) if @surge_arrester.save
   end

@@ -17,6 +17,7 @@ class Equipments::PotentialTransformersController < ApplicationController
   def create
     @potential_transformer = PotentialTransformer.new(potential_transformer_params)
     @equipment_category = EquipmentCategory.find(params[:equipment_category_id])
+    @potential_transformer.station = current_station
 
     @potential_transformer.equipment_category_id = @equipment_category.id
     if @potential_transformer.save

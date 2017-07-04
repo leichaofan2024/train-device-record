@@ -17,7 +17,7 @@ class Equipments::ApparatusCompositesController < ApplicationController
   def create
     @apparatus_composite = ApparatusComposite.new(apparatus_composite_params)
     @equipment_category = EquipmentCategory.find(params[:equipment_category_id])
-
+    @apparatus_composite.station = current_station
     @apparatus_composite.equipment_category_id = @equipment_category.id
     if @apparatus_composite.save
       redirect_to station_path(current_station)

@@ -17,6 +17,7 @@ class Equipments::CircuitBreakersController < ApplicationController
   def create
     @circuit_breaker = CircuitBreaker.new(circuit_breaker_params)
     @equipment_category = EquipmentCategory.find(params[:equipment_category_id])
+    @circuit_breaker.station = current_station
 
     @circuit_breaker.equipment_category_id = @equipment_category.id
     if @circuit_breaker.save

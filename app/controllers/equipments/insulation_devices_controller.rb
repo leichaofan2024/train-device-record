@@ -17,7 +17,7 @@ class Equipments::InsulationDevicesController < ApplicationController
   def create
     @insulation_device = InsulationDevice.new(insulation_device_params)
     @equipment_category = EquipmentCategory.find(params[:equipment_category_id])
-
+    @insulation_device.station = current_station
     @insulation_device.equipment_category_id = @equipment_category.id
     if @insulation_device.save
       redirect_to station_path(current_station)

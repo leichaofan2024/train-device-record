@@ -17,7 +17,7 @@ class Equipments::DischargeCoilsController < ApplicationController
   def create
     @discharge_coil = DischargeCoil.new(discharge_coil_params)
     @equipment_category = EquipmentCategory.find(params[:equipment_category_id])
-
+    @discharge_coil.station = current_station
     @discharge_coil.equipment_category_id = @equipment_category.id
     if @discharge_coil.save
       redirect_to station_path(current_station)

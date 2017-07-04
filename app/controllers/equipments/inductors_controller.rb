@@ -17,7 +17,7 @@ class Equipments::InductorsController < ApplicationController
   def create
     @inductor = Inductor.new(inductor_params)
     @equipment_category = EquipmentCategory.find(params[:equipment_category_id])
-
+    @inductor.station = current_station
     @inductor.equipment_category_id = @equipment_category.id
     if @inductor.save
       redirect_to station_path(current_station)

@@ -17,7 +17,7 @@ class Equipments::FailureJudgmentDevicesController < ApplicationController
   def create
       @failure_judgment_device = FailureJudgmentDevice.new(failure_judgment_device_params)
       @equipment_category = EquipmentCategory.find(params[:equipment_category_id])
-
+      @failure_judgment_device.station = current_station
       @failure_judgment_device.equipment_category_id = @equipment_category.id
       redirect_to station_path(current_station) if @failure_judgment_device.save
   end

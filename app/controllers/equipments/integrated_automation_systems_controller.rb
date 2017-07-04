@@ -17,7 +17,7 @@ class Equipments::IntegratedAutomationSystemsController < ApplicationController
   def create
       @integrated_automation_system = IntegratedAutomationSystem.new(integrated_automation_system_params)
       @equipment_category = EquipmentCategory.find(params[:equipment_category_id])
-
+      @integrated_automation_system.station = current_station
       @integrated_automation_system.equipment_category_id = @equipment_category.id
       redirect_to station_path(current_station) if @integrated_automation_system.save
   end

@@ -17,7 +17,7 @@ class Equipments::RayResistanceRingsController < ApplicationController
   def create
       @ray_resistance_ring = RayResistanceRing.new(ray_resistance_ring_params)
       @equipment_category = EquipmentCategory.find(params[:equipment_category_id])
-
+      @ray_resistance_ring.station = current_station
       @ray_resistance_ring.equipment_category_id = @equipment_category.id
       redirect_to station_path(current_station) if @ray_resistance_ring.save
   end

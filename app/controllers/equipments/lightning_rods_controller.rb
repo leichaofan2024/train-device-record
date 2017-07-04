@@ -17,7 +17,7 @@ class Equipments::LightningRodsController < ApplicationController
   def create
       @lightning_rod = LightningRod.new(lightning_rod_params)
       @equipment_category = EquipmentCategory.find(params[:equipment_category_id])
-
+      @lightning_rod.station = current_station
       @lightning_rod.equipment_category_id = @equipment_category.id
       redirect_to station_path(current_station) if @lightning_rod.save
   end

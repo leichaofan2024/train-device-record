@@ -17,7 +17,7 @@ class Equipments::TrendsRegulatingTransformersController < ApplicationController
   def create
     @trends_regulating_transformer = TrendsRegulatingTransformer.new(trends_regulating_transformer_params)
     @equipment_category = EquipmentCategory.find(params[:equipment_category_id])
-
+    @trends_regulating_transformer.station = current_station
     @trends_regulating_transformer.equipment_category_id = @equipment_category.id
     if @trends_regulating_transformer.save
       redirect_to station_path(current_station)

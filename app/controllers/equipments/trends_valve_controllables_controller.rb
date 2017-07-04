@@ -17,7 +17,7 @@ class Equipments::TrendsValveControllablesController < ApplicationController
   def create
    @trends_valve_controllable = TrendsValveControllable.new(trends_valve_controllable_params)
    @equipment_category = EquipmentCategory.find(params[:equipment_category_id])
-
+   @trends_valve_controllable.station = current_station
    @trends_valve_controllable.equipment_category_id = @equipment_category.id
    if @trends_valve_controllable.save
      redirect_to station_path(current_station)

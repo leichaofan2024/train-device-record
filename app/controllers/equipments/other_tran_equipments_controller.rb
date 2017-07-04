@@ -17,7 +17,7 @@ class Equipments::OtherTranEquipmentsController < ApplicationController
   def create
       @other_tran_equipment = OtherTranEquipment.new(other_tran_equipment_params)
       @equipment_category = EquipmentCategory.find(params[:equipment_category_id])
-
+      @other_tran_equipment.station = current_station
       @other_tran_equipment.equipment_category_id = @equipment_category.id
       redirect_to station_path(current_station) if @other_tran_equipment.save
   end

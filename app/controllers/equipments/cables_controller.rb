@@ -17,6 +17,7 @@ class Equipments::CablesController < ApplicationController
   def create
       @cable = Cable.new(cable_params)
       @equipment_category = EquipmentCategory.find(params[:equipment_category_id])
+      @cable.station = current_station
 
       @cable.equipment_category_id = @equipment_category.id
       redirect_to station_path(current_station) if @cable.save

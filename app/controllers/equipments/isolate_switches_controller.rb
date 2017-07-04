@@ -17,7 +17,7 @@ class Equipments::IsolateSwitchesController < ApplicationController
   def create
     @isolate_switch = IsolateSwitch.new(isolate_switch_params)
     @equipment_category = EquipmentCategory.find(params[:equipment_category_id])
-
+    @isolate_switch.station = current_station
     @isolate_switch.equipment_category_id = @equipment_category.id
     if @isolate_switch.save
       redirect_to station_path(current_station)

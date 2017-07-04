@@ -17,7 +17,7 @@ class Equipments::RemoteActionSystemsController < ApplicationController
   def create
       @remote_action_system = RemoteActionSystem.new(remote_action_system_params)
       @equipment_category = EquipmentCategory.find(params[:equipment_category_id])
-
+      @remote_action_system.station = current_station
       @remote_action_system.equipment_category_id = @equipment_category.id
       redirect_to station_path(current_station) if @remote_action_system.save
   end

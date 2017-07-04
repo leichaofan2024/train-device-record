@@ -17,7 +17,7 @@ class Equipments::TrendsShuntCapacitorsController < ApplicationController
   def create
     @trends_shunt_capacitor = TrendsShuntCapacitor.new(trends_shunt_capacitor_params)
     @equipment_category = EquipmentCategory.find(params[:equipment_category_id])
-
+    @trends_shunt_capacitor.station = current_station
     @trends_shunt_capacitor.equipment_category_id = @equipment_category.id
     if @trends_shunt_capacitor.save
       redirect_to station_path(current_station)

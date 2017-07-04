@@ -17,7 +17,7 @@ class Equipments::BatteriesController < ApplicationController
   def create
       @battery = Battery.new(battery_params)
       @equipment_category = EquipmentCategory.find(params[:equipment_category_id])
-
+      @battery.station = current_station
       @battery.equipment_category_id = @equipment_category.id
       redirect_to station_path(current_station) if @battery.save
   end

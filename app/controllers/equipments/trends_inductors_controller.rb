@@ -17,7 +17,7 @@ class Equipments::TrendsInductorsController < ApplicationController
   def create
     @trends_inductor = TrendsInductor.new(trends_inductor_params)
     @equipment_category = EquipmentCategory.find(params[:equipment_category_id])
-
+    @trends_inductor.station = current_station
     @trends_inductor.equipment_category_id = @equipment_category.id
     if @trends_inductor.save
       redirect_to station_path(current_station)

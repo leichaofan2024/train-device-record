@@ -17,7 +17,7 @@ class Equipments::VStopSystemsController < ApplicationController
   def create
       @v_stop_system = VStopSystem.new(v_stop_system_params)
       @equipment_category = EquipmentCategory.find(params[:equipment_category_id])
-
+      @v_stop_system.station = current_station
       @v_stop_system.equipment_category_id = @equipment_category.id
       redirect_to station_path(current_station) if @v_stop_system.save
   end

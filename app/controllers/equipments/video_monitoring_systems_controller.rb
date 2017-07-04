@@ -17,7 +17,7 @@ class Equipments::VideoMonitoringSystemsController < ApplicationController
   def create
       @video_monitoring_system = VideoMonitoringSystem.new(video_monitoring_system_params)
       @equipment_category = EquipmentCategory.find(params[:equipment_category_id])
-
+      @video_monitoring_system.station = current_station
       @video_monitoring_system.equipment_category_id = @equipment_category.id
       redirect_to station_path(current_station) if @video_monitoring_system.save
   end

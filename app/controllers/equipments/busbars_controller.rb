@@ -17,7 +17,7 @@ class Equipments::BusbarsController < ApplicationController
   def create
       @busbar = Busbar.new(busbar_params)
       @equipment_category = EquipmentCategory.find(params[:equipment_category_id])
-
+      @busbar.station = current_station
       @busbar.equipment_category_id = @equipment_category.id
       redirect_to station_path(current_station) if @busbar.save
   end

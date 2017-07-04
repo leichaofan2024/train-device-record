@@ -17,7 +17,7 @@ class Equipments::LoadSwitchesController < ApplicationController
   def create
     @load_switch = LoadSwitch.new(load_switch_params)
     @equipment_category = EquipmentCategory.find(params[:equipment_category_id])
-
+    @load_switch.station = current_station
     @load_switch.equipment_category_id = @equipment_category.id
     if @load_switch.save
       redirect_to station_path(current_station)

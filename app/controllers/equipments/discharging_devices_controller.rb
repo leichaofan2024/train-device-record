@@ -17,6 +17,7 @@ class Equipments::DischargingDevicesController < ApplicationController
   def create
       @discharging_device = DischargingDevice.new(discharging_device_params)
       @equipment_category = EquipmentCategory.find(params[:equipment_category_id])
+      @discharging_device.station = current_station
 
       @discharging_device.equipment_category_id = @equipment_category.id
       redirect_to station_path(current_station) if @discharging_device.save

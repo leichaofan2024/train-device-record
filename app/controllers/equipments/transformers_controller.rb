@@ -18,8 +18,9 @@ class Equipments::TransformersController < ApplicationController
   def create
       @transformer = Transformer.new(transformer_params)
       @equipment_category = EquipmentCategory.find(params[:equipment_category_id])
-
+      @transformer.station = current_station
       @transformer.equipment_category_id = @equipment_category.id
+
     if @transformer.save
       redirect_to station_path(current_station)
     end

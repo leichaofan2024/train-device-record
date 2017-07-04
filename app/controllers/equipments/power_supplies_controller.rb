@@ -17,7 +17,7 @@ class Equipments::PowerSuppliesController < ApplicationController
   def create
       @power_supply = PowerSupply.new(power_supply_params)
       @equipment_category = EquipmentCategory.find(params[:equipment_category_id])
-
+      @power_supply.station = current_station
       @power_supply.equipment_category_id = @equipment_category.id
       redirect_to station_path(current_station) if @power_supply.save
   end
