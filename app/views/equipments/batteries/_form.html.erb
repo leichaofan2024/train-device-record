@@ -1,5 +1,5 @@
 <%= simple_form_for [@equipment_category,:equipments,@battery] do |f| %>
-  <%= f.select :station_id, [[current_station.name,current_station.id]] %>
+  
   <%= f.select :factory_id, Factory.all.map{|u| [u.name,u.id]} %>
   <%= f.input :standard, label:"规格编号"%>
   <%= f.input :number, label: "组数"%>
