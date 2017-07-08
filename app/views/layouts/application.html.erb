@@ -11,18 +11,26 @@
   <body style="height:100%;">
     <%= render "common/navbar" %>
     <%= render "common/flashes" %>
-    <div class="col-md-2">
-      <div class="side-bar">
-        <% if current_user.present? %>
+    <% if current_user.present? %>
+      <div class="col-md-2">
+        <div class="side-bar">
           <div class="side-bar-categoy">
+            <% if current_user.job_number == "007" %>
+              <% station = Station.find_by(:id => params[:id]) %>
+              <% if station.present?%>
+                <% station.equipment_categories.all.each do |e| %>
+                  <a href="#equipment-detail-<%= e.id%>"><%= e.name %></a>
+                <% end %>
+              <% end %>
+            <% else %>
+              <% current_station.equipment_categories.all.each do |e| %>
+                <% if url_for != "/stations/#{current_station.id}"  %>
 
-            <% current_station.equipment_categories.all.each do |e| %>
-              <% if url_for != "/stations/#{current_station.id}"  %>
-
-            <!-- 还可以这样写：  <%  url_for != station_path(current_user)  %>  -->
-                <a href="/stations/<%= current_station.id%>" ><%= e.name %></a>
-              <% else %>
-                <a href="#equipment-detail-<%= e.id%>"><%= e.name%></a>
+              <!-- 还可以这样写：  <%  url_for != station_path(current_user)  %>  -->
+                  <a href="/stations/<%= current_station.id%>" ><%= e.name %></a>
+                <% else %>
+                  <a href="#equipment-detail-<%= e.id%>"><%= e.name%></a>
+                <% end %>
               <% end %>
             <% end %>
           </div>
@@ -34,9 +42,10 @@
             <% end %>
             <a href="/stations/<%= current_station.id%>"> 回到首页</a>
           </div>
-        <% end %>
+        </div>
       </div>
-    </div>
+    <% end %>
+
 
     <div class="application-frame ">
       <div class="col-md-10">
